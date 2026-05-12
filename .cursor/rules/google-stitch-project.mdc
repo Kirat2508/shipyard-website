@@ -1,0 +1,16 @@
+---
+description: Link this repo to Google Stitch MCP project 1974210018818908575
+alwaysApply: true
+---
+
+# Google Stitch (this workspace)
+
+This website work is tied to **Google Stitch** project ID **`1974210018818908575`** (numeric id only; do not add a `projects/` prefix where the API expects a bare id).
+
+When you need design or generated UI from Stitch, use the **Stitch MCP** server (e.g. `stitch` / `user-stitch` in Cursor). Typical flow:
+
+1. **`get_project`** — pass `name`: `projects/1974210018818908575` to load project metadata.
+2. **`list_screens`** — pass `projectId`: `1974210018818908575` to list screens.
+3. **`get_screen`** — use the full resource `name` from list results (format `projects/{project}/screens/{screen}`).
+
+Stitch MCP must be enabled in Cursor with auth per [Stitch MCP setup](https://stitch.withgoogle.com/docs/mcp/setup) (API key in MCP headers or OAuth / proxy as documented there).
