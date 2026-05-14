@@ -11,7 +11,7 @@ import {
   STAGE_VALUES,
   stripForStorage,
   type ApplicationInput,
-} from "../../lib/applicationSchema";
+} from "../../api/lib/applicationSchema";
 
 const STEPS = [
   { prelude: "The start", title: "Tell us who you are", sub: "Basics we need to review your application." },

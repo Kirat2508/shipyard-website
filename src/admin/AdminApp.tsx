@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { COMMITMENT_LABELS, STAGE_LABELS } from "../../lib/applicationSchema";
+import { COMMITMENT_LABELS, STAGE_LABELS } from "../../api/lib/applicationSchema";
 
 type Row = {
   id: string;
