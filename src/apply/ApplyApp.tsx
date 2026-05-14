@@ -11,7 +11,7 @@ import {
   STAGE_VALUES,
   stripForStorage,
   type ApplicationInput,
-} from "../shared/applicationSchema";
+} from "../../lib/applicationSchema";
 
 const STEPS = [
   { prelude: "The start", title: "Tell us who you are", sub: "Basics we need to review your application." },
@@ -97,9 +97,18 @@ export function ApplyApp() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const body = (await res.json().catch(() => ({}))) as { error?: string };
+      const body = (await res.json().catch(() => ({}))) as {
+        error?: string;
+        detail?: string;
+        hint?: string;
+      };
       if (!res.ok) {
-        setSubmitError(body.error ?? `Could not submit (${res.status}). Try again later.`);
+        const parts = [body.error, body.detail, body.hint].filter(
+          (s): s is string => typeof s === "string" && s.length > 0,
+        );
+        setSubmitError(
+          parts.length > 0 ? parts.join(" ") : `Could not submit (${res.status}). Try again later.`,
+        );
         return;
       }
       setSubmitted(true);

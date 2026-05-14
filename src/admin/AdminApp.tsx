@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { COMMITMENT_LABELS, STAGE_LABELS } from "../shared/applicationSchema";
+import { COMMITMENT_LABELS, STAGE_LABELS } from "../../lib/applicationSchema";
 
 type Row = {
   id: string;
@@ -141,8 +141,9 @@ export function AdminApp() {
             </button>
           </form>
           <p className="body-md admin-login__hint">
-            This page is not linked from the public site. Use the password set in{" "}
-            <code>APPLY_ADMIN_PASSWORD</code> (Vercel env).
+            This page is not linked from the public site. Sign-in uses <code>APPLY_ADMIN_PASSWORD</code> and{" "}
+            <code>APPLY_ADMIN_SECRET</code>. Loading submissions also requires{" "}
+            <code>SUPABASE_URL</code> and <code>SUPABASE_SERVICE_ROLE_KEY</code> on Vercel—then redeploy.
           </p>
         </div>
       </div>

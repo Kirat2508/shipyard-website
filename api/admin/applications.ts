@@ -34,10 +34,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = process.env.SUPABASE_URL?.trim().replace(/\/$/, "");
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
   if (!url || !key) {
-    res.status(503).json({ error: "Database not configured" });
+    res.status(503).json({
+      error:
+        "Database not configured. Add SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY to this Vercel project (Settings → Environment Variables), then redeploy. Use your Supabase service role key, not the anon key.",
+    });
     return;
   }
 

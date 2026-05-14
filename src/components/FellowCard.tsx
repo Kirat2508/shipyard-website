@@ -14,12 +14,32 @@ function LinkedInMark({ className }: { className?: string }) {
   );
 }
 
+/** Inline chain-link icon, sized with `em` to match adjacent product label. */
+function ProductLinkIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+    </svg>
+  );
+}
+
 const hoverTransition = { type: "tween" as const, duration: 0.28, ease: "easeOut" };
 
 export function FellowCard({ fellow }: { fellow: Fellow }) {
   const nameId = `fellow-name-${fellow.id}`;
   const label = `LinkedIn profile for ${fellow.name}`;
   const bioTrimmed = fellow.bio?.trim();
+  const productUrl = fellow.productUrl?.trim();
+  const productLinkLabel = `Visit ${fellow.role} website (opens in new tab)`;
 
   return (
     <motion.article
@@ -65,9 +85,20 @@ export function FellowCard({ fellow }: { fellow: Fellow }) {
             >
               {fellow.name}
             </h3>
-            <p className="mt-1 font-sans text-xs font-normal leading-snug text-white sm:text-sm lg:text-[0.8125rem]">
-              {fellow.role}
-            </p>
+            <div className="mt-1 flex flex-wrap items-center gap-x-1 font-sans text-xs font-normal leading-snug text-white sm:text-sm lg:text-[0.8125rem] [text-shadow:0_1px_3px_rgba(0,0,0,0.9)]">
+              <span className="min-w-0">{fellow.role}</span>
+              {productUrl ? (
+                <a
+                  href={productUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={productLinkLabel}
+                  className="pointer-events-auto inline-flex shrink-0 items-center rounded-sm text-white opacity-95 ring-offset-2 ring-offset-transparent transition hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/90"
+                >
+                  <ProductLinkIcon className="h-[1em] w-[1em] translate-y-px drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)]" />
+                </a>
+              ) : null}
+            </div>
             {bioTrimmed ? (
               <p className="mt-1 line-clamp-3 font-sans text-[0.6875rem] font-normal leading-relaxed text-white/95 sm:text-xs sm:leading-relaxed lg:line-clamp-2 lg:text-[0.7rem] lg:leading-relaxed">
                 {bioTrimmed}
