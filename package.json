@@ -9,13 +9,19 @@
     "start": "python3 -m http.server 5173"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.105.4",
     "framer-motion": "^12.6.5",
+    "jose": "^6.2.3",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.75.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@types/node": "^25.7.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "@vercel/node": "^5.8.0",
     "@vitejs/plugin-react": "^4.4.1",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
