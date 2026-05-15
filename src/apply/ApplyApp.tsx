@@ -209,7 +209,7 @@ export function ApplyApp() {
                 <div className="apply__pills">
                   {STAGE_VALUES.map((val) => (
                     <label key={val} className="apply__pill">
-                      <input type="radio" value={val} className="u-sr-only" {...register("stage")} />
+                      <input type="radio" value={val} {...register("stage")} />
                       <span>{STAGE_LABELS[val]}</span>
                     </label>
                   ))}
@@ -264,10 +264,10 @@ export function ApplyApp() {
                 <legend className="apply__question">
                   Are you willing to commit to all 3 Sundays and ship by the end?
                 </legend>
-                <div className="apply__pills apply__pills--tall">
+                <div className="apply__pills">
                   {COMMITMENT_VALUES.map((val) => (
                     <label key={val} className="apply__pill">
-                      <input type="radio" value={val} className="u-sr-only" {...register("commitment")} />
+                      <input type="radio" value={val} {...register("commitment")} />
                       <span>{COMMITMENT_LABELS[val]}</span>
                     </label>
                   ))}
@@ -280,11 +280,11 @@ export function ApplyApp() {
                 <legend className="apply__question">Are you planning to build solo or with someone?</legend>
                 <div className="apply__pills">
                   <label className="apply__pill">
-                    <input type="radio" value="solo" className="u-sr-only" {...register("soloOrTeam")} />
+                    <input type="radio" value="solo" {...register("soloOrTeam")} />
                     <span>Solo</span>
                   </label>
                   <label className="apply__pill">
-                    <input type="radio" value="team" className="u-sr-only" {...register("soloOrTeam")} />
+                    <input type="radio" value="team" {...register("soloOrTeam")} />
                     <span>In a team</span>
                   </label>
                 </div>

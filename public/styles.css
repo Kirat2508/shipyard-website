@@ -943,6 +943,15 @@ main {
   height: clamp(2.25rem, 5.5vw, 3.25rem);
 }
 
+/*
+ * Paytm "Loves AI" lockup is very wide (e.g. 5:1). The shared max-width on .logo-img
+ * would cap width first and shrink height below Antler/BHIVE — bump width + height.
+ */
+.logo-img--paytm {
+  height: clamp(2.5rem, 6.25vw, 3.6rem);
+  max-width: min(20rem, 92vw);
+}
+
 /* Supported By — compact portrait row (secondary to Recent Fellows) */
 .supported-by-mentors {
   margin-top: clamp(3rem, 8vw, 5rem);
@@ -1282,18 +1291,26 @@ a.btn-on-dark {
   margin-top: 0.75rem;
 }
 
-.apply__pills--tall .apply__pill {
-  align-items: flex-start;
-}
-
 .apply__pill {
   display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.apply__pill input[type="radio"] {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0;
+  accent-color: var(--secondary);
   cursor: pointer;
 }
 
 .apply__pill span {
   display: block;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   padding: 0.85rem 1rem;
   border-radius: var(--radius-lg);
   background: #f5f5f5;
