@@ -37,11 +37,15 @@ function syncHeroGalleryMetrics(viewport: HTMLElement, strip: HTMLElement, track
   track.style.setProperty("--hero-gallery-marquee-duration", `${sec}s`);
 }
 
+let heroGalleryInitialized = false;
+
 export function initHeroGallery(): void {
   const viewport = document.querySelector<HTMLElement>("[data-hero-marquee-viewport]");
   const track = document.querySelector<HTMLElement>("[data-hero-marquee-track]");
   const strip = document.querySelector<HTMLElement>("[data-hero-marquee-strip]");
   if (!viewport || !track || !strip) return;
+  if (heroGalleryInitialized) return;
+  heroGalleryInitialized = true;
 
   const clone = strip.cloneNode(true) as HTMLElement;
   clone.removeAttribute("data-hero-marquee-strip");

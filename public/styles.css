@@ -910,6 +910,23 @@ main {
 .logos {
   text-align: center;
   background-color: var(--background);
+  overflow: visible;
+}
+
+/* transform on reveal-on-scroll clips overflowing children (VC flower petals) */
+.section.logos.reveal-on-scroll,
+.section.logos.reveal-on-scroll.is-revealed,
+.section.logos.reveal-on-scroll.is-reveal-out {
+  transform: none;
+}
+
+.logos-stack {
+  --logo-height: clamp(1.85rem, 4.25vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2.5rem, 6.5vw, 4.25rem);
+  overflow: visible;
 }
 
 .logos-row {
@@ -918,15 +935,31 @@ main {
   align-items: center;
   justify-content: center;
   gap: clamp(2rem, 8vw, 5rem);
+  overflow: visible;
+  min-height: calc(var(--logo-height) + 1.5rem);
+}
+
+.logos-row--second {
+  gap: clamp(2.5rem, 9vw, 5.5rem);
+  align-items: center;
+}
+
+.logo-slot {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 0.75rem;
+  padding-inline: 0.25rem;
+  overflow: visible;
 }
 
 .logo-img {
   display: block;
-  height: clamp(2rem, 5vw, 3rem);
   width: auto;
-  max-width: min(12rem, 42vw);
-  object-fit: contain;
-  object-position: center;
+  height: auto;
+  max-height: calc(var(--logo-height) * 0.85);
+  max-width: none;
   opacity: 0.88;
   filter: grayscale(1);
   transition:
@@ -934,22 +967,13 @@ main {
     opacity 0.35s ease;
 }
 
+.logo-slot--vc .logo-img {
+  max-height: var(--logo-height);
+}
+
 .logo-img:hover {
   filter: grayscale(0);
   opacity: 1;
-}
-
-.logo-img--bhive {
-  height: clamp(2.25rem, 5.5vw, 3.25rem);
-}
-
-/*
- * Paytm "Loves AI" lockup is very wide (e.g. 5:1). The shared max-width on .logo-img
- * would cap width first and shrink height below Antler/BHIVE — bump width + height.
- */
-.logo-img--paytm {
-  height: clamp(2.5rem, 6.25vw, 3.6rem);
-  max-width: min(20rem, 92vw);
 }
 
 /* Supported By — compact portrait row (secondary to Recent Fellows) */
@@ -961,7 +985,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(1.5rem, 5vw, 2.75rem);
-  max-width: 46rem;
+  max-width: 52rem;
   margin-left: auto;
   margin-right: auto;
   justify-items: start;
@@ -1013,15 +1037,21 @@ main {
 .supported-by-mentors__role {
   margin-top: 0.3rem;
   font-family: var(--font-sans);
-  font-size: clamp(0.75rem, 1.25vw, 0.8125rem);
+  font-size: clamp(0.625rem, 0.95vw, 0.6875rem);
   font-weight: 400;
-  line-height: 1.45;
-  letter-spacing: 0.04em;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
   font-variant-numeric: tabular-nums;
   color: var(--on-surface-variant);
+  max-width: 100%;
 }
 
 @media (max-width: 639px) {
+  .supported-by-mentors__role {
+    white-space: normal;
+    line-height: 1.3;
+  }
+
   .supported-by-mentors__grid {
     grid-template-columns: 1fr;
     max-width: 17.5rem;
@@ -1041,12 +1071,7 @@ main {
 @media (min-width: 640px) and (max-width: 899px) {
   .supported-by-mentors__grid {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 36rem;
-  }
-
-  .supported-by-mentors__item:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
+  max-width: 36rem;
   }
 }
 

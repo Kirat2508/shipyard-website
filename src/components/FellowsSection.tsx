@@ -8,7 +8,7 @@ export function FellowsSection() {
       aria-label="Recent fellows"
     >
       <div className="mx-auto max-w-[1440px]">
-        <h2 className="heading-section heading-section--fold">Recent Fellows</h2>
+        <h2 className="heading-section heading-section--fold">Shipyard Fellows</h2>
 
         <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {fellows.map((fellow) => (

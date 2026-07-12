@@ -5,7 +5,7 @@ export const PLACEHOLDER_LINKEDIN =
 export type Fellow = {
   id: string;
   name: string;
-  /** Tagline under the name (e.g. company, batch). */
+  /** Product name shown under the fellow's name. */
   role: string;
   /** Live product site; when set, a link icon is shown next to the product name. */
   productUrl?: string;
@@ -15,7 +15,150 @@ export type Fellow = {
   bio?: string;
 };
 
-export const fellows: Fellow[] = [
+const abhimanyu: Fellow = {
+  id: "abhimanyu",
+  name: "Abhimanyu",
+  role: "Zipply",
+  productUrl: "https://www.tryzipply.com/",
+  imageSrc: "/images/fellows/abhimanyu.png",
+  linkedinUrl: "https://www.linkedin.com/in/abhimanyu-dwivedi/",
+  bio: "AI job search concierge that tracks roles, scores fit, and applies on your behalf.",
+};
+
+const sashank: Fellow = {
+  id: "sashank",
+  name: "Sashank",
+  role: "Earshot",
+  productUrl: "https://www.kupsas.com/earshot",
+  imageSrc: "/images/fellows/sashank.png",
+  linkedinUrl: PLACEHOLDER_LINKEDIN,
+  bio: "Human-in-the-loop social media automation to get leads for your business and build brand reputation.",
+};
+
+const sankalp: Fellow = {
+  id: "sankalp",
+  name: "Sankalp",
+  role: "MeraTalent",
+  productUrl: "https://www.meratalent.com",
+  imageSrc: "/images/fellows/sankalp.jpg",
+  linkedinUrl: PLACEHOLDER_LINKEDIN,
+  bio: "AI powered career intelligence that finds the best-fit roles and helps you position yourself to land them.",
+};
+
+const prerna: Fellow = {
+  id: "prerna",
+  name: "Prerna",
+  role: "nomira.in",
+  productUrl: "https://travel-app-beta-mauve.vercel.app/",
+  imageSrc: "/images/fellows/prerna.png",
+  linkedinUrl: "https://www.linkedin.com/in/prernaaagarwal/",
+  bio: "Women-first travel app for safety tips, buddies, planning, and real insights.",
+};
+
+/** Season 2 fellows (after the four featured cards). */
+const season2Fellows: Fellow[] = [
+  {
+    id: "yasaswini",
+    name: "Yasaswini",
+    role: "yomnita",
+    productUrl: "https://www.yomnita.com",
+    imageSrc: "/images/fellows/yasawini.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "Grading assistant that evaluates a student's assessment at a conceptual level.",
+  },
+  {
+    id: "gursharan",
+    name: "Gursharan",
+    role: "Agentagon",
+    productUrl: "https://www.agentagon.ai",
+    imageSrc: "/images/fellows/Gursharan.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "Self-improving production infra to improve your AI agents.",
+  },
+  {
+    id: "karthik",
+    name: "Karthik",
+    role: "Shop Copilot",
+    productUrl: "https://www.copilotverse.io/products/shop-copilot",
+    imageSrc: "/images/fellows/karthik.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "The AI that runs your shop: it sells, designs on demand, and markets it for you.",
+  },
+  {
+    id: "renuka",
+    name: "Renuka",
+    role: "Resquare",
+    productUrl: "https://www.resquare.in/",
+    imageSrc: "/images/fellows/renuka.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "One place for students to find all tech opportunities.",
+  },
+  {
+    id: "bhuvanesh",
+    name: "Bhuvanesh",
+    role: "Peach",
+    imageSrc: "/images/fellows/bhuvanesh.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "Peach tells you if your brand shows up when buyers ask AI and exactly what to do if it doesn't.",
+  },
+  {
+    id: "divyansh",
+    name: "Divyansh",
+    role: "ITGMS",
+    productUrl: "https://itgms.codefane.in/",
+    imageSrc: "/images/fellows/divyansh.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "Unified IT support, asset tracking, and governance for smarter enterprise operations in one platform.",
+  },
+  {
+    id: "uday",
+    name: "Uday",
+    role: "ITGMS",
+    productUrl: "https://itgms.codefane.in/",
+    imageSrc: "/images/fellows/uday.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "Unified IT support, asset tracking, and governance for smarter enterprise operations in one platform.",
+  },
+  {
+    id: "kiran",
+    name: "Kiran",
+    role: "Reality Check AI",
+    productUrl: "https://realitycheck.co.in/",
+    imageSrc: "/images/fellows/kiran.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "A platform for students and working professionals to gain clarity about what they want to do in their lives.",
+  },
+  {
+    id: "ancy",
+    name: "Ancy",
+    role: "MyHealthOS",
+    productUrl: "https://www.myhealthos.in",
+    imageSrc: "/images/fellows/ancy.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "Bringing all your healthcare records into one secure, AI-powered platform.",
+  },
+  {
+    id: "chaitanya",
+    name: "Chaitanya",
+    role: "Mahaul",
+    productUrl: "https://www.atypicalchai.com/mahaul/",
+    imageSrc: "/images/fellows/Chaitanya.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "Mahaul is a digital card game that takes any conversation beyond small talk via fun and engaging questions.",
+  },
+  {
+    id: "saharsh",
+    name: "Saharsh",
+    role: "DrawX",
+    productUrl: "https://www.getdrawx.com/",
+    imageSrc: "/images/fellows/saharsh.jpg",
+    linkedinUrl: PLACEHOLDER_LINKEDIN,
+    bio: "DrawX turns a GitHub repo, a PDF, a URL, or a single sentence into a clean, accurate diagram.",
+  },
+];
+
+/** Season 1 fellows (after Season 2; excludes Abhimanyu and Prerna, shown in featured row). */
+const season1Fellows: Fellow[] = [
   {
     id: "kamalika",
     name: "Kamalika",
@@ -23,24 +166,6 @@ export const fellows: Fellow[] = [
     imageSrc: "/images/fellows/kamalika.png",
     linkedinUrl: "https://www.linkedin.com/in/kamalika-poddar/",
     bio: "AI-native DPO protecting fintechs from compliance risks and massive fines.",
-  },
-  {
-    id: "abhimanyu",
-    name: "Abhimanyu",
-    role: "Elsa.jobs",
-    productUrl: "https://elsa.jobs",
-    imageSrc: "/images/fellows/abhimanyu.png",
-    linkedinUrl: "https://www.linkedin.com/in/abhimanyu-dwivedi/",
-    bio: "AI concierge using autonomous agents to supercharge your job search.",
-  },
-  {
-    id: "prerna",
-    name: "Prerna",
-    role: "nomira.in",
-    productUrl: "https://travel-app-beta-mauve.vercel.app/",
-    imageSrc: "/images/fellows/prerna.png",
-    linkedinUrl: "https://www.linkedin.com/in/prernaaagarwal/",
-    bio: "Women-first travel app for safety tips, buddies, planning, and real insights.",
   },
   {
     id: "sukshita",
@@ -96,4 +221,14 @@ export const fellows: Fellow[] = [
     linkedinUrl: "https://www.linkedin.com/in/nikitagupta31/",
     bio: "Connects travellers with verified English-speaking doctors anywhere in minutes.",
   },
+];
+
+/** Featured first, then Season 2, then remaining Season 1. */
+export const fellows: Fellow[] = [
+  abhimanyu,
+  sashank,
+  sankalp,
+  prerna,
+  ...season2Fellows,
+  ...season1Fellows,
 ];
