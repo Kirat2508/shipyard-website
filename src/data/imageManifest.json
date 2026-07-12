@@ -1,0 +1,632 @@
+{
+  "/images/fellows/Chaitanya.jpg": {
+    "src": "/images/fellows/chaitanya-800.webp",
+    "srcSet": "/images/fellows/chaitanya-400.webp 400w, /images/fellows/chaitanya-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAAAQBgCdASoUAB4APu1iqE2ppaOiMAgBMB2JZACdMzmOXqTpmFFwaytgAqTOANeMO6AnLahqVdSXUgAA9Rgs5maERe82DlULYLvgyiUuxbEyaTfdru0tYek33I5bKgKp+xc+tsfbONsa/7qbAxmlIoN+iP7tQZ+RMx24pnwBQpiJxn6OFXZ7CJ/zG5VO6WRuD4BK5mvcE+OSJk0uCA0//WV1qu90Qjzd6f/vIiS/4J6MqCiRf/M3RKkRvXgvtyz0XoSrjAAA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/Gursharan.jpg": {
+    "src": "/images/fellows/gursharan-800.webp",
+    "srcSet": "/images/fellows/gursharan-400.webp 400w, /images/fellows/gursharan-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAABwBQCdASoUAB4APu1iq1AppSOisBgIATAdiWMAuwAQsWbyQg9czesO6BK6eQ/zB3MixmIAAP5JKR+hkOHknes7WD5ZXItPb16pYFVIrAFGZ9FzH9NToL2L3ltCf9hedjJJPSRLSpcuPs9bDNk5/9q7ybyY724BhUX1ZMTtL+lbK9t1der2ws7+RfXFUTsw5EIy1UyXc7ANch0F2cy5orFmKN7qDx4v0Kx2AvF6kaOgqIKOXssnEIxhaWxd2iTnNGgAAA==",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/Sashank.jpg": {
+    "src": "/images/fellows/sashank-800.webp",
+    "srcSet": "/images/fellows/sashank-400.webp 400w, /images/fellows/sashank-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAADQBACdASoUAB4APu1gp02ppSMiMAgBMB2JYwDGfCFluqgFY7lQjNeVUemsM9DGSAD+7bJGmidK/qwD5689v9W7xUj55yynkhT5yHZBTG7UqgEYBSWOiLUEMYn8//Lq582lOXoqlOLBy38YMqU7rmqUxwYfH2u9iaoJLcixsruaumh9uYbHo/Jx55NXj17G8zDzDqbgCe4ELasrF+okCS5H8qTbsJt9SgoSrmOzACejmVMXqpIhJLVTwAA=",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/abhimanyu.png": {
+    "src": "/images/fellows/abhimanyu-800.webp",
+    "srcSet": "/images/fellows/abhimanyu-400.webp 400w, /images/fellows/abhimanyu-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABQBQCdASoUAB4APu1mrE+ppaQiMBgIATAdiWMAtOgQiJ3L2zmw/H1Esnx7hKXMAqnhwAAAzJ4tr6rKixi9L6wHo3/9TmaGqRjdhY66HxHcRpV7lGWBJG6pcKNUQvqiZwY/z5AuPscnYl1UteiuLqlg/YqAuggkOamEC0ilcsS/lRInAF0uZRCumgn0j0nX/z4SVLrb2I/IrGDm4saetip1Dqs0xRn3yjduBkUcYHFeM8AA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/ancy.jpg": {
+    "src": "/images/fellows/ancy-800.webp",
+    "srcSet": "/images/fellows/ancy-400.webp 400w, /images/fellows/ancy-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAADQBQCdASoUAB4APu1orlCppaQiqAqpMB2JZgCdMzBiezAAe//hpZaa74CjufhD2UmX6fBm8SLgAP4+BxvudVCI/VvqLslnmvBCIpbbvHND8ePUhdrmdoA8kMZL8kLjR3GSK0a2Yyc2uZFl1ha+wMuHak95WhB0OAUnDML2nWEeVKtzmtf4aMHahNMm3hee417r0XWFZ7incdRrXIAKtpTarkKdDnPeBkzW41jjlJHt0RHv2OHgtx56TDc6HRxOOSSRZyQa6y7k+MHVMmCl03L5xW3jxBQhxTrXeQmx6yWngAAA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/bhuvanesh.jpg": {
+    "src": "/images/fellows/bhuvanesh-800.webp",
+    "srcSet": "/images/fellows/bhuvanesh-400.webp 400w, /images/fellows/bhuvanesh-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAACwBQCdASoUAB4APu1qqVAppiOiqA1RMB2JZgCdMw5EIFEQT40vZvI2X0/842XDdWvyQTHsXAAA/nc3j2N3qikCB9uzYUaVrSsyGX3xfII4tB+mdxxz7vYY5TYZSKN+jyFsiWRZdrDeoYTq3JaSauLw0Ml6M1Fe/jLVsRsdsS9O2sMINpn9bJrdJpZ+SEwGst8tMN623HL8dA8AsL9niQDpkoPkwFJrtj/gdF5qqO7W8vmPgsgAAA==",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/divyansh.jpg": {
+    "src": "/images/fellows/divyansh-800.webp",
+    "srcSet": "/images/fellows/divyansh-400.webp 400w, /images/fellows/divyansh-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAADQBACdASoUAB4APu1mqk2ppaQiMAgBMB2JZwC+SB4SiBHgjuVuHVGrwua6PN268AD+6IyUYG8N1Bk61PHD9NqkJ8nfst4t4UHw2suYvaHYBjTctzE0XL2tGsJrQFaSo+CDDO++jraSjB+oi5jJnb77DJwlWa2Fwe8uuexoHargIDrr0xHjZXwDlpQfd6mpYSVs2rdBvkrgSZKy7NG9zMCXNfG3UxMOegAAAA==",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/kamalika.png": {
+    "src": "/images/fellows/kamalika-800.webp",
+    "srcSet": "/images/fellows/kamalika-400.webp 400w, /images/fellows/kamalika-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAADwBACdASoUABQAPu1ur1IppiQiqAgBMB2JQBe6MYTO+QK48ne+imfArWKKDbkEX4AA/ieljldGXzCCGs2MSUA/DtYJ3TwzhKtob+OqG1hF5EKtTpSdOCc58rPaOA/Fi59WeM60osRriHCdVJE2Nk8uet0UlYU4kFyMlyd9FIrQ0lyY61T6vbBBKQdHU0KOCoz7jVw/1+NdJrN6mVfl4VegRjCSDltR2pirWkhwMkrrpdJLw7J7pYJBkv1FNsahMxy8+MBYeHT6mj/myW/AAA==",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/karthik.jpg": {
+    "src": "/images/fellows/karthik-800.webp",
+    "srcSet": "/images/fellows/karthik-400.webp 400w, /images/fellows/karthik-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAACQBQCdASoUAB4APuVgpE2pJaMiMAwBIByJZACw7CHaBNRpfrMFuWArDHnUTVBQbI9/VkPzgAD+u74sScWdYh4h3HqeHTaRMm3u7I6SVn+dGWG0o8BNhES5xlgpWKqRnPWWKvWU6EgcyK9hceOmWDyiqtBZ6edFKErBoHekuvfrUKHED6je4hFImGBO4fOMsdtvf3gA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/kiran.jpg": {
+    "src": "/images/fellows/kiran-800.webp",
+    "srcSet": "/images/fellows/kiran-400.webp 400w, /images/fellows/kiran-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAwBQCdASoUAB4APuVepE2pJSMiMAwBIByJZQC7AB6XSORfg2jUm61tO63cfCZAmF7vEAD9lz9FfQ2wMp+HoqQWC+zbtibdPOxRQrbPu0QOX+Lxq6OxL4FRfNvdE+e/nY55KrBA8Zqbxg19g7wcDUKKp180AAHrVzM0pqU+cUqJ0R3igSfTTLCN7eqV+b76y7z37OOypvaDV3ti1AAAAA==",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/mohith.png": {
+    "src": "/images/fellows/mohith-800.webp",
+    "srcSet": "/images/fellows/mohith-400.webp 400w, /images/fellows/mohith-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBACdASoUAB8APulmqE2pJjEiMBgMAiAdCWMAyrQ0KfJ6Cc4ZFoOgmkux6OAA/vTX9Hcsm6tSg9Y9fkU4tgX/zunVf8EgpoTfajj5VRr24EzXtA2AaAYfjiuAi8+qDkkDzMH2s0AMhWoW0WijB/3+ZYZQy6L2l1GJfr3T8zB8HQ7fKgKB2bFmn12qu7wTErsMsELqy2AAAAAA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/nikita.png": {
+    "src": "/images/fellows/nikita-800.webp",
+    "srcSet": "/images/fellows/nikita-400.webp 400w, /images/fellows/nikita-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAADQBACdASoUABsAPu1ur1IppiQiqAgBMB2JQBYeAQAGLpV5Jk3NxeZHziD8szPxAAD+u9wizwR9nAt5xRa6XlOcnZV8isvb2xBxSQK4s/TjZ7JUwFWWNrUejjL9QLvnVdbJ9bUcaEqn4Nq6VtNtL1ptV9Gr9U8UTomaMr9f6Q3iF2MIUa2jesVycIIAeIz4sEVq78cZfCRXibrf9OpQzpEXHAM3r5Qb1FyqI4kkYajEHAI0EEuT6QXHiDkkaE1gYzfrriiwAAA=",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/pranjal.png": {
+    "src": "/images/fellows/pranjal-800.webp",
+    "srcSet": "/images/fellows/pranjal-400.webp 400w, /images/fellows/pranjal-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAADQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZAC7MzQ5ff/i2WTRHlZv5pL3SUtpkqZ2TKZDYGwAAP39KaIFzQ8d3zfpME/aqwuBzfVnuyB7KjsstQIzQK4wbdym44/mzu9nSdr+Tn9LctbuXkWq2MdMs//gcZr4V3UpDwf6+tuOh0DiCUr5Th+g0NFixcNzvHipVmCU6DKHw7FBvJNUBm4k7tF9JBo+4Tp4XrDVl1kbp+9i1czIfkp0PKGZfbluwAA=",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/prashast.jpg": {
+    "src": "/images/fellows/prashast-800.webp",
+    "srcSet": "/images/fellows/prashast-400.webp 400w, /images/fellows/prashast-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQBQCdASoUAB4APulgpE2pJaMiMAwBIB0JYwAAW+wPL0r0H35Z6YtlnQbOI5XGb6MgAP7aXTzkFS/3udQPQcavRP63AKWsmJn11evAeZuZaWDZLzaoaJOAg4SVOqqG1DSCgH24i7Um8Qlf67/1bR2XnFbF1arXbqDLW4yv4LLAFQCeUuEImUAA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/prerna.png": {
+    "src": "/images/fellows/prerna-800.webp",
+    "srcSet": "/images/fellows/prerna-400.webp 400w, /images/fellows/prerna-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAACwBQCdASoUABQAPu1ur1IppiQiqAgBMB2JbACdMtU8OLR3aouwvhO1kyLp+8797BitMdL8m9AA/R+n9sq6TW/pjBhwI53afc4TxYylda/7CwP123vLXPkytngsrH6/TsWL/3HWefehqOiWIkXLOzYYL1OSzqK/Pkef0/n9zrnoky7gPRk0SNEMERPcOiPvrAvqUhA1IwICjek3U45nrg1ziVsa3ry/5X9g013iXaGfs+2qRax9ndaJvFlkFfeqZbVJA9kTLeaMcYogAAA=",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/renuka.jpg": {
+    "src": "/images/fellows/renuka-800.webp",
+    "srcSet": "/images/fellows/renuka-400.webp 400w, /images/fellows/renuka-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAAAwBQCdASoUAB4APu1ip02ppaOiMAgBMB2JZQDE2BQ/wpq918M27iO2XT6cwl+mJ7n6UAD+gYUjQqKktga3/HRdZ8xzKrx+sQ4jNkKL2EyJt2I5ahze9ScR5xFiEoYH9b9bTuOvdpVeL7pU4ctgteRMM9AlGOYgd7BZQe2Yp/uFWDpf2YnkLNURGNxTtVeKXMyekgELXjfKCkKSKGclwfe0lDSm5WR9tgZjYg3KENC2iG8iClUZXs/1kRaqZweJYNCYAAAA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/saharsh.jpg": {
+    "src": "/images/fellows/saharsh-800.webp",
+    "srcSet": "/images/fellows/saharsh-400.webp 400w, /images/fellows/saharsh-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADwAwCdASoUAA0APu1iqU2ppaQiMAgBMB2JYwC7ABbJtB1ZXce3mOsAAP7QuVeKwdQN/lKALFAvwxoFsxqadarZYNyf6TkVj1VqetWzYYyVSko8m4E7Gc+RKJfFRi3ZaabepX8b3/zOULn9mlxdVxcei2MOIOAM2AA=",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/sankalp.jpg": {
+    "src": "/images/fellows/sankalp-800.webp",
+    "srcSet": "/images/fellows/sankalp-400.webp 400w, /images/fellows/sankalp-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAACQBACdASoUABQAPu1srVCppiQiqAqpMB2JZADE2A8W6XxeudCpzbX/YTLwxgAA/uQjMao4aA8jXxXk9bLKV0FwTq0JEZ7XS5469Nluhqw909LzW7nNeByPPfhoa6wshZo37p8t6NBdRL69mS6x+/xf+X92IhwKt1kvq3TvPt1kvW/p11pesRr3PH0goz3j4r0qYn3w15VoWGMfJedu3LjTPu4FNP7rfNYAAA==",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/sashank.png": {
+    "src": "/images/fellows/sashank-800.webp",
+    "srcSet": "/images/fellows/sashank-400.webp 400w, /images/fellows/sashank-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADQBACdASoUAB4APu1ur1IppiQiqAgBMB2JZQDGfBD+0o+lCMlfN8wyAiczsrXZAADLQ5t6NpvGbn7JPGvmbeXsOTOU/S5zU0OjpOGV4Vg2gG9kCdQ7zw0b86DGMFjh+t08nswlE66qSxto0WE1l7E5I7bnqA7lTYYi9dpZCONuilDKmmqUkBevvCSHvUnlEdLS9VgUjXCnnfMOSMTrps5zm46MtZJKS02sXelh8dTA/FfVdW+HRwuKBRNIoAAA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/sukshita.png": {
+    "src": "/images/fellows/sukshita-800.webp",
+    "srcSet": "/images/fellows/sukshita-400.webp 400w, /images/fellows/sukshita-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRiABAABXRUJQVlA4IBQBAAAQBwCdASoUACkAPu1srVCppiQiqqgBMB2JYwC4NvGOXOTv5sN3TXLyQbp9TB9jLiyyr4KLjXK9yuLyOHcoQUzaQADMINsvUyrRlAOAL/nC1cLcqO3TtkefOmEdyxzjfXlBjPPjjJSad8+YRrEmVVWPqwbw9O/KvrCy3Txephu5rrfziozwkY2sgleP0zWs/iDePWc3L6P0xhpFE/9XlvADnBhTq2YgItHArsYwmcl0NfE68pQVDyKhEO+rnGPZFgvyAs2yBv/VVxVUBmihqSLMueHFyNnc/k1owsJTwCgc7scSPVUqFFoLxVf4O2q00Ymr55xt5tLjb23s7v608ttNKtTQZndqnUIWMJdUo6dygcAAAAA=",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/suresh.png": {
+    "src": "/images/fellows/suresh-800.webp",
+    "srcSet": "/images/fellows/suresh-400.webp 400w, /images/fellows/suresh-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAABQBQCdASoUABUAPu1ur1IppiQiqAgBMB2JagCdIQCJwAHRtOo4pvRO500tbypK2RCT2cAA8TnDOY2ixJ+irg7q3df7X+1EVQJX2y8Vt6QDBKjvsybYotPtu6LgPtPb3UwiOCyA0krOouTcudbjC2FgLjT5lX/qpqk5SAc57AdSLEyHHkxI9eXVPd8E0TMOJSiRqjRBO6Vs0Yee7joELt4YP1xrGS01UOvuHYmOSHcKwmSeH7iIkIs3pk6WlUJ4MGWJEpjd/gtWqObo6NjXcAAA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/suvrita.png": {
+    "src": "/images/fellows/suvrita-800.webp",
+    "srcSet": "/images/fellows/suvrita-400.webp 400w, /images/fellows/suvrita-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAADQBQCdASoUABsAPu1qrlCppaQiqAqpMB2JQBWAAguSC6co2ji5jVQQYu6YIwXAODj0RGAffMIAAP7e7MMoAlLIfip9w74WPs+/gke9YvBubOUpD7CibAcdov2LDJMj3NBzf/Ls6tHb2B7d/XTFpqKdgD7f4N1kkr6+CdmVC6mCFq+9/fCzkzzFaBB4veP+lUh3bNB84WjqVhdNd9iJyZx3s7ZF001AnY3ulvvSMggtPdzAAAA=",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/uday.jpg": {
+    "src": "/images/fellows/uday-800.webp",
+    "srcSet": "/images/fellows/uday-400.webp 400w, /images/fellows/uday-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACQBQCdASoUAB4APuleo02pJSMiMAwBIB0JYgC7ACFrs9Bq85l+9ic7Igjo3cT8OOWyPFNbwAD+iXvMgrVC5cNzD4atmffy+MCaya4oJrWr/8EjHiHdatwrWeCAiVdmr6nLhcQUosPIbNWZpQd6w8ClCN01LCmXASNC15jjRpoE1avAMuk1y8ghKYaFW2pyauWvbDHpaXXgjNgPKiu0WwtW6kT7z5VkYI9t7h4LebMPRbP7sf7LRA5uXs2Ze7OFUHu+AA==",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/fellows/yasawini.jpg": {
+    "src": "/images/fellows/yasawini-800.webp",
+    "srcSet": "/images/fellows/yasawini-400.webp 400w, /images/fellows/yasawini-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABQBQCdASoUAB4APu1gqE2ppSOiMAgBMB2JQBOgA9IvlhhM4DCMbz9eP9kM3PTSKoEYBIAA/sAkMgGUrmht3ww0WEHO8d7vX8+IUs5pnxmI0Lugtp1oMI+Dp6C9ypO9dcWk98hhy3B2GCHMSmdYRKlUNwOov9ry6L1R4G40ENKE/Xoq36PYLUwJYpmeUuZu1BJKaZYjGsQXSATi8LU4mv4xsVLRQBZ0Zc5ydzpTQ+GwAAAA",
+    "widths": [
+      400,
+      800
+    ]
+  },
+  "/images/gallery/IMG_8073.JPG": {
+    "src": "/images/gallery/img-8073-600.webp",
+    "srcSet": "/images/gallery/img-8073-300.webp 300w, /images/gallery/img-8073-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACQBACdASoUABQAPu1ur1KppiQiqAgBMB2JZQAD5XBk7JZEeEhA3So7MCNxcMAA/dPtC63ePOxqT4QNRPwVQinHrHJnqaYH0JYb5lIj+UIDs0RKcfgjMMc9jlyov2YxKwLheK0UVytgsGlBGV+LV6PzLgVWaIvj8l4/3V6alqK6abHpAv9HTzEBsJg1E8nxhYz4mqUAqHfoNBcFdNuK7x/g+3PKXyBjgYKY4UgAAAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/IMG_8078.JPG": {
+    "src": "/images/gallery/img-8078-600.webp",
+    "srcSet": "/images/gallery/img-8078-300.webp 300w, /images/gallery/img-8078-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAADwBACdASoUABQAPu1urlIppiQiqAgBMB2JZwDOdBEYtHIUOWZkoX3huMJe2ezOoSAA/eMSyHfpp4qXn3nuswBcN1W+5QiKs4yEsJnLGsQ78UkCLdt6UY7pOE75rmJdBWqPhTykqwF6UlsBYLAC8bY70dohMHXDppkAiqEh95u0SqAtvv0CMcxZBGsF3mKtZj/uJ6kXCjeYpWsvwAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/aayushi_session.jpeg": {
+    "src": "/images/gallery/aayushi-session-600.webp",
+    "srcSet": "/images/gallery/aayushi-session-300.webp 300w, /images/gallery/aayushi-session-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBACdASoUABQAPu1srlIppaQiqAgBMB2JZwAAH1yfSQVeXz8FuSjdV/UAAPDafAI3ovEisGf1kUWDJCj9fVBRV6maOoKGZ5Mr40RiEO7f1ozrnR+ZipdFTf09RkJucKCouwZ18Jzaq0GNf7nzihtwlBLwdr0EWanmHTHSkwZPLCk7uWB1FGnBN6atbTK7KtiAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/aayushi_session_2.jpeg": {
+    "src": "/images/gallery/aayushi-session-2-600.webp",
+    "srcSet": "/images/gallery/aayushi-session-2-300.webp 300w, /images/gallery/aayushi-session-2-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZQC2FdwAXMqqFlebuK82N/sae9bqgJwQAPXdK/dKqlH8flGT4ZnjHHT3QCMRGQu/Ix9HanEId4i8cJ8Sui+z8ArfExeBQy7sUJBtTcyCEYjX57F3ln9tVP6zICCqmMCMmq3/ngZmBGzG5DA+1nrqp6JEZ6VAznOAt0HUjO5mUDoYrR5wfFWIh5W+LEZ5qAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/abhimanyu-image.jpeg": {
+    "src": "/images/gallery/abhimanyu-image-600.webp",
+    "srcSet": "/images/gallery/abhimanyu-image-300.webp 300w, /images/gallery/abhimanyu-image-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACQBACdASoUABQAPu1irFAppSQisBgIATAdiWUAAC5jOmfI7wxolqX+mjtPuBQA/lFb51Rsru5+GSM3g48BIfZKd0bN2Ym7/KrZ+oiVAxHUuI9Iv/1HDXFZbDPw4DdSM3jAnFJXfwQ629K1sWjxGvW5mWIZXm9OxfhpfHPVzt58E+7iWIaAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/abhimanyu_demo.jpeg": {
+    "src": "/images/gallery/abhimanyu-demo-600.webp",
+    "srcSet": "/images/gallery/abhimanyu-demo-300.webp 300w, /images/gallery/abhimanyu-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAADQBACdASoUABQAPu1ur1IppiQiqAgBMB2JQBTi5YAaHWvvo6fFqSnyYcBwKS2HgADLArMyuQ3X4adHepQ6H+wOU7aGxKzuWkHwIrybxZW5JFuWEPWXTmz06yvTHK9Cl1rztloz+GLI/wHiVvHFcvFifETw2EY6/m80bqcmwDRjgAbOCqcOcSAoLzuFSvSRmZmfAs0bTILtoVgKQOMmXr4sqZoqv1r0HveGyWfoGp5ipoWhx3aIAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/aditya-session-audience.jpeg": {
+    "src": "/images/gallery/aditya-session-audience-600.webp",
+    "srcSet": "/images/gallery/aditya-session-audience-300.webp 300w, /images/gallery/aditya-session-audience-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAAAwBgCdASoUABQAPu1wsFIppiSiqAgBMB2JaACdMoM6Jmq3AAbU8ha1BRFG1fFOoO37w8ESCGXX+4CAAP7FReupEZEs8ZZFNdbUOQi65tzyhTK4SoqBmDTWRCArosxEr0MSNrMdcfB7CqMee5euH1unv31U2J+MCR1hKDfQsnuRlrwCQw4UQnvAcJ4uhCMGzFaLJJh6oaN8XCnsK6d8NGB1qU66ty/44md01Er2xvRZRn86Qk+rSdkUAi4HeSrfb7IyI5dGgfw/+HuHNAo6cdSgfAKQeaYd4p47Loz4xaPqsqzz3Ca/yge6Qi78oEoAAAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/aditya-session.jpeg": {
+    "src": "/images/gallery/aditya-session-600.webp",
+    "srcSet": "/images/gallery/aditya-session-300.webp 300w, /images/gallery/aditya-session-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACwBQCdASoUABQAPu1qr1AppiSiqAqpMB2JagCpFOdwqgLEGfeCMfaYvx6Jg+Al3keqEAOf+lAA8m0XwXAx/TvjfCcbRd7rFxGko/1TuY7nuRBlPW0iM1cAFZbzMzEh/VQpukMHs6RO8UO+Bote9Yp3c/iPJ/76GxnBHZl/y6tgcKvWbtAXu5RhAW9htrvxH9zaZKQt4Ahxr7oUx5QcLuCLLKvY1AAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/ancy-demo.jpeg": {
+    "src": "/images/gallery/ancy-demo-600.webp",
+    "srcSet": "/images/gallery/ancy-demo-300.webp 300w, /images/gallery/ancy-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAQBQCdASoUABQAPu1urlIppiQiqAgBMB2JYgC2yYyKd6Z51NDw+AnxUN2XQVKpBy5gAPjc6z9kEgDplX1OQ7qJi/NJax/eaGkb9DEkgv5ehBGkuADWAjTCeGgZStIKvOK1hAog4+actwHgwvWOvVm25Y+DlMzMYQy3v1F05JHce7FxhdNrZoatvc0no1MeYtJR5YNgyi3O10dacEIwkQulZ5DceG8WoBq3Abhs88eBYpqhbXgAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/ani_harkirat.jpeg": {
+    "src": "/images/gallery/ani-harkirat-600.webp",
+    "srcSet": "/images/gallery/ani-harkirat-300.webp 300w, /images/gallery/ani-harkirat-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAQBQCdASoUABQAPu1sqlGppaOiqAqpMB2JZADDNYy8NrGBeXU6cK4iYBZzdJ4jYg4AAP7jYSf50g1IToBnpcMonh563oLSS04pDmQKvxvbwOVKfz7VfM5LY0sv+RCKx6bwF+iUGO9Oy2OWvnsxvVQi49kFcpoWoi59vqX+yNI3yB75+mWUQIRlXVyRni+knQCL2+A9rZoyGV7GRECHvEZFuq6OvU3b+yP0qgQbI8BFJbcWAAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/anshul_session.jpeg": {
+    "src": "/images/gallery/anshul-session-600.webp",
+    "srcSet": "/images/gallery/anshul-session-300.webp 300w, /images/gallery/anshul-session-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADQBACdASoUABQAPu1ur1IppiQiqAgBMB2JZQAD5aCsPXjN/O1Dx/u1a/fWt364YADKfsbEq1p/4wozPq9mCNvFdpvBVlq2ooE62ax8jfzmlv+G+WbIg5lrXbdmtBwLZ/Lo06HFJtjEOdyiesC9FEOIHF7QSvOgGbxpoHTxDBaLTQGlzw6qN+iEzhoGVe9tfnxlh8l8gwORDUcTvZWA1+5Y0R8AAAAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/bhawana_demo_day.png": {
+    "src": "/images/gallery/bhawana-demo-day-600.webp",
+    "srcSet": "/images/gallery/bhawana-demo-day-300.webp 300w, /images/gallery/bhawana-demo-day-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAAAwBQCdASoUABQAPu1qqlEppaOiqAqpMB2JQBOmcj+u6TQNS2upi8MCwmaNr/ML84WGAAD+Uv+VD9frTmLFqoq1g50KmSP5Zg2w5NE3GTCeT/Sp0UY5Cj1tr7wRsSZblWfRfRgYs3dk0iSnPrjE6b1Ulc3HCO+/UnQzsEkTA6ELUUTX7QCkc312D+XN5jWChFlHbJpnPZyXIA4V1TmmYcu/hv4zqJVhex8KaKWQzyTl/hqTnuR+4uXxyUsVGW4lCZZAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/bindya-demo.jpeg": {
+    "src": "/images/gallery/bindya-demo-600.webp",
+    "srcSet": "/images/gallery/bindya-demo-300.webp 300w, /images/gallery/bindya-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADQBACdASoUABQAPu1urlIppiQiqAgBMB2JQBadAXnlyfjegdYgOM5J7XJMK0yfUADLNPm78iV+rdowLLv6Txbdy+4onGgB44TCKZNnDgzwa4QIZ/TPZa3KTK3oZhTSk12Dwrc+vMomqv7cCP05yOJi3UpML1AXuRuL+4+RHXCO5h5XPLvvWwzlM5qsCibRedX4mYXVt20MsuzYAtlnBryIayipDih2nuXde4mtgJTf2QAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/chaitanya-demo.jpeg": {
+    "src": "/images/gallery/chaitanya-demo-600.webp",
+    "srcSet": "/images/gallery/chaitanya-demo-300.webp 300w, /images/gallery/chaitanya-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAACQBACdASoUABQAPu1sqlGppaOiqAqpMB2JYwAAGWv/50u90xkXrIPv82g5kgAA9x7lm1Oy0lL5XjRdoQb6beKdgA1s08B64GdVKjAo5VrvBF6v298hzh2GbKA7vbSnk9iv+8nZ1vCWSz3lbhZljLeLnOfxz7sVQJwKQjqMW+GJLeggG8wsRNAudAdttGuidE16tinFhOLhlzyCAAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/demo-day_1.jpeg": {
+    "src": "/images/gallery/demo-day-1-600.webp",
+    "srcSet": "/images/gallery/demo-day-1-300.webp 300w, /images/gallery/demo-day-1-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAADQBACdASoUABQAPu1ur1IppiQiqAgBMB2JZQDIBO6BWlsR+MarYAhlDJBL8si0IAD92Qn0FyGnWbnT3RIJDLPKlfh9HcAN8o25KsnBeygObgRxcqRuFF7LB2XwTcEk+pblRfha2W5N+wRecoWs0XtgPv4tlnXqtsW5Jm6ZwgshAAriEe4U+2bJdxz64BpUx5K85xKQfd9ECC7ye7VPbwGcUk/lpHb1A28BhWYQAAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/dinner-dhanushya.jpeg": {
+    "src": "/images/gallery/dinner-dhanushya-600.webp",
+    "srcSet": "/images/gallery/dinner-dhanushya-300.webp 300w, /images/gallery/dinner-dhanushya-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRgQBAABXRUJQVlA4IPgAAAAQBgCdASoUABQAPu1urlIppiQiqAgBMB2JZACdMoM8TIBdoBOzZfYQuc+H11uls66MQqoj2O2PcyAA/n4nB4uXMRTWqd5of581+BzME/XZuiXNpYkeZzF6QA2jwhQUdsLUnVQ5hBycTIOjZAdiIFxVpxL+A6LXELIT1xpCeLjZiRvOL2nidmrB9Gy6wwpimaenZj03lHGWn6HWoskBZFwtN19sFkBi0gOZeZ1WowSy8VtIelq8DrEt+i94ozy/vjhcfFbt8IMC6kDvE4q0Ukp8Hdncy0taAJQ9DBY+UPQwWsHq9y0mVMDeBKdyvMXUlixxGQHjwQAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/gursharan.jpeg": {
+    "src": "/images/gallery/gursharan-600.webp",
+    "srcSet": "/images/gallery/gursharan-300.webp 300w, /images/gallery/gursharan-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABwBQCdASoUABQAPu1srVEppaQiqAqpMB2JZACw7YxEZ6LMBXRg8wv7B8RCSMt7sI56hQKgAP7EXgVM4droGpYdtO4+qh+slnL11H3+LZG6UBOj2hquN/H4WLpkGi3z+IxFlrbAsgSvLPNu1uBBlvYTw/nmgEfxxRMsOQEbVmD9fFKvKI0CgUuttgZeIElhHtZcLmJCCvStLDXwP+43x9E1ZehQ8TJTwS29x2/Nkm4AAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/harkirat_demo_day.png": {
+    "src": "/images/gallery/harkirat-demo-day-600.webp",
+    "srcSet": "/images/gallery/harkirat-demo-day-300.webp 300w, /images/gallery/harkirat-demo-day-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAABQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JZQC3uafFn4GP3K21yowqhYAnZpCE2jjQoAAA+m+yEcb8XdHrfqGGIdbbRHKM9AwvnnO5J7vEUZi13/rrqltN5MfNGy5hEwLzh2oFOb4hHOGnmJiwVCu3zi5GVMi+cyCDytzQK4Q+wnk+POhPvXTaHX+leeuRVdpTGkrce+lzN+dhXI57dstc8ojE1t07WfjsyhJqDh8jLrxTalmCl6TncAAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/kamalika_demo.jpeg": {
+    "src": "/images/gallery/kamalika-demo-600.webp",
+    "srcSet": "/images/gallery/kamalika-demo-300.webp 300w, /images/gallery/kamalika-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAQBQCdASoUABQAPu1urlIppiQiqAgBMB2JQBbZAZ0vIlpx7Gy/d/t7Lg4QRI3xQSW4AN/G1iuoxjO/BOZXhxFokJsZ0SWY7bTawDoKXlYtBN94902mKiYMYXZDaj/rNU6uzBEjVGbbpbSQQU3IByUC2tcAh/F19jN7+fRC66MEvbMZrTWOLiauTNYfj15vrP2N1TYP9BZOeynqVt6c0+2oH0m9JYIYMj49jSwEi034HBjlY15E2v2AAAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/kapoor-cafe.jpeg": {
+    "src": "/images/gallery/kapoor-cafe-600.webp",
+    "srcSet": "/images/gallery/kapoor-cafe-300.webp 300w, /images/gallery/kapoor-cafe-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRgQBAABXRUJQVlA4IPgAAAAQBgCdASoUABQAPu1urlIppiQiqAgBMB2JZACdMoM8TIBdoBOzZfYQuc+H11uls66MQqoj2O2PcyAA/n4nB4uXMRTWqd5of581+BzME/XZuiXNpYkeZzF6QA2jwhQUdsLUnVQ5hBycTIOjZAdiIFxVpxL+A6LXELIT1xpCeLjZiRvOL2nidmrB9Gy6wwpimaenZj03lHGWn6HWoskBZFwtN19sFkBi0gOZeZ1WowSy8VtIelq8DrEt+i94ozy/vjhcfFbt8IMC6kDvE4q0Ukp8Hdncy0taAJQ9DBY+UPQwWsHq9y0mVMDeBKdyvMXUlixxGQHjwQAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/kiran-demo.jpeg": {
+    "src": "/images/gallery/kiran-demo-600.webp",
+    "srcSet": "/images/gallery/kiran-demo-300.webp 300w, /images/gallery/kiran-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAADQBACdASoUABQAPu1ur1IppiQiqAgBMB2JQBWGZDXoARiys6C3thi9vZS0Vo46AAD3YFP/I44wXKOq1Zw5cI06y7vH8m2A++32CbVaU7FjJwMZYtH3Vf6CWWSRL3e7W/bBrdTJkOmJwoPct00wG5Kp31edbRTYpB41ZTnoLKpMZla1laEpVssvbUndV/fRusjvoz1afm7+F/l8+7iyMnICNbSsgAAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/nikita_demo.jpeg": {
+    "src": "/images/gallery/nikita-demo-600.webp",
+    "srcSet": "/images/gallery/nikita-demo-300.webp 300w, /images/gallery/nikita-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAQBQCdASoUABQAPu1urlIppiQiqAgBMB2JQBA0IcDsAByV0i0MNq1ROQqLyTaNmaJAAMncjl4x1I65tmUOMV3YuWpU9J7E1Optyn+2mIgd7EMWFJSrf8mk19Uhg773wSvo9J66UiSLbxBqI6+9zwyfwRsNcxEdzbuHmQkFjVr5NjI3xhNjI3mYj1wRkeyOb3CsCpFChf0WqkHmohOWjqtIdqJ4s4OvGUBBCx/1rh9MCRL4PAAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/pranjal_demo.jpeg": {
+    "src": "/images/gallery/pranjal-demo-600.webp",
+    "srcSet": "/images/gallery/pranjal-demo-300.webp 300w, /images/gallery/pranjal-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAACwBACdASoUABQAPu1ur1IppiQiqAgBMB2JQAXeqAOwUMoQy4O4XDYyEukD/RSAAOAkIonVywEH3FqSrF5r5CmSJQ8XmJNkEX2Z58pIpSxeQSur9yAUd++oYmRKQchfL9Yc4MC0luZNBS8x7tuNJBtcW4KMAkP1gNYu5qv3WDmJZync+S84W1YdVMw13TKyBwCjonbdd6OrpROEZDLJezO0gJ1s3qwB0xSpGaCOLzwmlhhgUGum7FDcwPLjAnkiMAAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/renuka-demo.jpeg": {
+    "src": "/images/gallery/renuka-demo-600.webp",
+    "srcSet": "/images/gallery/renuka-demo-300.webp 300w, /images/gallery/renuka-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABwBACdASoUABQAPu1ur1KppiQiqAgBMB2JQBWGcBASeHh4BLXNYgoKRpGqYAD8h8Nap3UCZ5N5Xll036wJw84BOr1EgJT9L+m35VTDHL65isgQPAqh+GVWKEQiQ9TP1d16E4wVkGjGMXXi9FHGNLB+aJiQ4InBWx3+1wf3Rk5RE7Ldaft3nF/9+sRdbGEG7hwoGgVgA5lAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/rishabh-session.png": {
+    "src": "/images/gallery/rishabh-session-600.webp",
+    "srcSet": "/images/gallery/rishabh-session-300.webp 300w, /images/gallery/rishabh-session-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAADwBACdASoUABQAPu1ur1IppiQiqAgBMB2JZwDKABENokLLmNQitfvGrs6LmdDSWgAA/sB5Rck9W5nptC2KLN5VzQ72Zozo5PH/cOx7S75TRYeqKKYb/FpuBZTXF+bMLZhQf6eq7tT5Zs3Fj8z7NyqE0n3vc7rAO1IyyuU/aeoX7RNNbFd3RwY95YM6BemSF7KxjoSJxoYrzHOAgXPJyoeUOQAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/ritesh_demo.jpeg": {
+    "src": "/images/gallery/ritesh-demo-600.webp",
+    "srcSet": "/images/gallery/ritesh-demo-300.webp 300w, /images/gallery/ritesh-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACQBACdASoUABQAPu1ur1IppiQiqAgBMB2JZQAAErdhwYfhstxtk8UWf2XcQQAA9jvnXSLkUGD2GecljFNnXY7RkGoE3fD8m06UVLRV6oPVeJOFOvvpjIKEqjcIqtfYaPVEuARC+c/7LS+rzfvL1l6w1aNrbdkPuoEPR50aS9ZtQcecQ88w2R9p/Bjz8mz3DjlqiVynh9aRDuOcwhZ2Nyb4lCdKlJxBMETIql3AAAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/saharsh-demo.jpeg": {
+    "src": "/images/gallery/saharsh-demo-600.webp",
+    "srcSet": "/images/gallery/saharsh-demo-300.webp 300w, /images/gallery/saharsh-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAADQBACdASoUABQAPu1ur1IppiQiqAgBMB2JQBibAdfzNqByqPrjgiziZ/fbVvn7AAD0Ripd2QxbVYdgEVXKlD12oELZ+a/cD4gDjy9Xl5ZOqYSaiwDhQpa9l+vn1CpNSMN2X4EIpGHPjJzZCE7zQc0RrvpV1Z/l8kMJdun8Kjb/vmxrwQ2pMKSuRovZcligZZr9P9ef4CG48xGCrd1tkrSB/i2KAJ0x3ehY0/AA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/sankalp-demo.jpeg": {
+    "src": "/images/gallery/sankalp-demo-600.webp",
+    "srcSet": "/images/gallery/sankalp-demo-300.webp 300w, /images/gallery/sankalp-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAADQBACdASoUABQAPu1ur1KppiQiqAgBMB2JZAC7AA8X5dLqqWmGZrdMnEjYSmEYQADLDneOBAcTZMWJC5VA4bK5OtJH28Nvc52NB3211Ehs+Ne6XP3qWHvviz+TH3wvMm7paI5+jA9Iowv51W5m/ch6DCPRGkt/+2lEDxZJQqVOzXPGK+i02DlNZ98ssRln58bIX7F/9UxgyK7R8pd6J/Ia07sTAVVpYEXEf/CmJSswP1bsyAKKAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/sankalp-image.jpeg": {
+    "src": "/images/gallery/sankalp-image-600.webp",
+    "srcSet": "/images/gallery/sankalp-image-300.webp 300w, /images/gallery/sankalp-image-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAADQBACdASoUABQAPu1ur1KppiQiqAgBMB2JZAC7AA8X5dLqqWmGZrdMnEjYSmEYQADLDneOBAcTZMWJC5VA4bK5OtJH28Nvc52NB3211Ehs+Ne6XP3qWHvviz+TH3wvMm7paI5+jA9Iowv51W5m/ch6DCPRGkt/+2lEDxZJQqVOzXPGK+i02DlNZ98ssRln58bIX7F/9UxgyK7R8pd6J/Ia07sTAVVpYEXEf/CmJSswP1bsyAKKAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/shipyard_audience.png": {
+    "src": "/images/gallery/shipyard-audience-600.webp",
+    "srcSet": "/images/gallery/shipyard-audience-300.webp 300w, /images/gallery/shipyard-audience-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAQBQCdASoUABQAPu1urlIppiQiqAgBMB2JQBbZMZUMw+bzDnytR7LRGZEii5XAV/70AP7KTN2ctbgnqrZgSXGKEVy0e7FDPsBKi66Q0DlzdxfZ6OnrXwv/C0l70MsYnlRDnossBcSx8WNkGJOKr94cnY0Wt94Zt4D53znqJ4BJm8RVpzwa2qp+ul5zE5nkHwJO3BEaFTe92tDe8LXAJXh0EYPoa340dCqt079EIbu+lTznTvrYDYQYAAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/shipyard_dinner.jpeg": {
+    "src": "/images/gallery/shipyard-dinner-600.webp",
+    "srcSet": "/images/gallery/shipyard-dinner-300.webp 300w, /images/gallery/shipyard-dinner-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAABQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JYgCdMtP200js4x/XIckVi+rjJBri50KIcCgA/rP9VvmQ7eB3+Zn8XJ+nZB01rSWhYdnmGk0PovS1Y+ZabFB83kvQJgA1sYeG7F/ThIgqfTx4GjTi2z+KQtzmqIUWQRSKxOldRnOCYbjazOxu36eXl/U81cA6Fyv86SwdBr6QRCP5HEX6uXZSDZ/VAKBJCDl6EnFzsY8jFExwaVwEPww5UIsGGwwma0Bsb2mpY0AAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/shipyard_lunch.jpeg": {
+    "src": "/images/gallery/shipyard-lunch-600.webp",
+    "srcSet": "/images/gallery/shipyard-lunch-300.webp 300w, /images/gallery/shipyard-lunch-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAADwBACdASoUABQAPu1wsFIppiSiqAgBMB2JQBdiP/wChzxQQ+sb0QE3nHogvuLtYAAA95+5Oqk0GdJQBdSB2klp5sOPoxR2jvgtV2H71JsB6qkaSEaxRnVfy/Sx7+D/uAUM8GuSBCoMvgQkunK4gLXFQEb/gqKHTE/x67m0IzCXYhmwksvbrKXjmRnRlIzoZjtc+f8Ph2LdlebCvr1YprU4QWzkARpH10+FtVICwvkd81ooutAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/suvrita_demo.jpeg": {
+    "src": "/images/gallery/suvrita-demo-600.webp",
+    "srcSet": "/images/gallery/suvrita-demo-300.webp 300w, /images/gallery/suvrita-demo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBQCdASoUABQAPu1wsFKppiSiqAgBMB2JQBXDsYiN3dDhjZb58TQy02O/w1pn2+mGcKwA3Em5mUztgLaK7kAhPljXWZdCPwsCSQZLnsGpwA1/2tmWUKZG3I43S+y5qEB9no+Pgi5OHii7nWCqed3GJTav5S4whScpowdOeykMCgAoMimdy/uqO+6ehnozMr7ag2dl4p8LAU+MkvUybjQSAyXSXFEHLGHltAAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/vivek-bhuva.jpeg": {
+    "src": "/images/gallery/vivek-bhuva-600.webp",
+    "srcSet": "/images/gallery/vivek-bhuva-300.webp 300w, /images/gallery/vivek-bhuva-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAAAQBQCdASoUABQAPu1wsFKppiSiqAgBMB2JZACxDGJBkf2JYM52TuR0bjjqb50w7XSAAP7tYRcDVXw5Q9IP47URHPxKgSQJ+XyJsjT8/wTryrdzRBRUFydfAQGEJKID36PXuxJ48tnumKfyQGAPoYGirWNTIyn6P6UNRYTodf2EM2tcgm4QPnXyGsBMbGxenTiFoEJYQbuAhTMcZvSjftwfEtkm+ap5o3ct/02HY9eD9U6KY89yuXdvSCBZZTxunmQ5gAAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/vivek-card.jpeg": {
+    "src": "/images/gallery/vivek-card-600.webp",
+    "srcSet": "/images/gallery/vivek-card-300.webp 300w, /images/gallery/vivek-card-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRtAAAABXRUJQVlA4IMQAAABQBQCdASoUABQAPu1ur1IppiQiqAgBMB2JYgCdEf/gHTV6IOv85SPONjUuUlpyBsOA+gAA/O/ROQrNhFFwgrKUeb/PCFNOCTYlROuU9Lt/8ono/fARXX/teEz/YNK6pt3Vx1Bo1X0ovhpSilN3T3hTZPwlGWdWUrtVu8Q1CLpgiIT3oWItz4SjpOkWPKOayOZcAz2B6/l4wwVmqT5aQgSqNZ2NuX3nHrHhncQ1xfD5eUDPA020d5Ricst5sKMttbY+iQAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/gallery/vivek-session.png": {
+    "src": "/images/gallery/vivek-session-600.webp",
+    "srcSet": "/images/gallery/vivek-session-300.webp 300w, /images/gallery/vivek-session-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQBACdASoUABQAPu1irE4ppaSiKA1RMB2JZQDBzA9KUx7WyyQ2v582rgTyPAAA/qhmgGlp8BoOUJjfGLxF2FIZAL8XrGbuV39vl+jgWKDoTl5yS8hki5/saNHG1eOtrOLFUa81BjnsDqHCAUYQ/tEeH9gmPAvwpyXhOMyuP88MaHAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/mentors/aaditya-ramakrishnan.jpeg": {
+    "src": "/images/mentors/aaditya-ramakrishnan-600.webp",
+    "srcSet": "/images/mentors/aaditya-ramakrishnan-300.webp 300w, /images/mentors/aaditya-ramakrishnan-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACwBACdASoUABQAPu1wsFIppiSiqAgBMB2JaQAAKgIoGHU1OZ78gmuhuOTHw3OQAP7zgoSa9qprYIhv4UCKrvyyNXDAse7GY/GAmHC6ed2hcSwdrgllK4z2pfDV6pEkyUQHyTl02PwVae+RW1z57lBTbyBSOJGGeMOG//Ol8oxslUNVlpovGmpNcwAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/mentors/anshul_Marketing_Director_Antler.png": {
+    "src": "/images/mentors/anshul-marketing-director-antler-600.webp",
+    "srcSet": "/images/mentors/anshul-marketing-director-antler-300.webp 300w, /images/mentors/anshul-marketing-director-antler-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADwBACdASoUABQAPu1oqVAppaOiqA1RMB2JbACzr8CAm2qts4JvZ1TFwYQLl9I8JwAA+TENdPcZ4KHjgjFLjHlvwbPepvQOJZ0u8sT8BTLxIQ4ER8GkzWAi7luudTcMgXmAPilDnefDahbW2oOl1PB2qIlQfxX/D92sXTzrjDml4PJ7vua4N/WOHTFAwjIYYKuVix+llDqBzyTB1wmQaIN1DMF0yKm7WnxAflW/xHhAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/mentors/ashutosh_Co-Founder_Revrag_ai.png": {
+    "src": "/images/mentors/ashutosh-co-founder-revrag-ai-600.webp",
+    "srcSet": "/images/mentors/ashutosh-co-founder-revrag-ai-300.webp 300w, /images/mentors/ashutosh-co-founder-revrag-ai-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRtwAAABXRUJQVlA4INAAAACQBQCdASoUABQAPu1qq1EppaOiqAqpMB2JZgCw+iABy2CF//2TkX2dNCfA9HBHNajcImmMAAD+8DYAqm5cpwtWnUZoOnPLiYda9q5ucISbQxp3CX06x+BvdvjhflhMJdAROBiW+71Oiz/e5QJkuR4aZCtqBz36RlgeBIHWyppqvEsvteg6gxYlY94xZGsvKVrprNnwJ9v5QsaCmnqehL8Gch8finVHM1ohvKH2l2XGj03DmbMQsoIlt/SO9oXXWghTbZ9ZkctXsingNlL9tQAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/mentors/ayushi_Co-Founder_Magicroll_ai.png": {
+    "src": "/images/mentors/ayushi-co-founder-magicroll-ai-600.webp",
+    "srcSet": "/images/mentors/ayushi-co-founder-magicroll-ai-300.webp 300w, /images/mentors/ayushi-co-founder-magicroll-ai-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADQBACdASoUABQAPu1urlKppiQiqAgBMB2JZQC2yBDc75Kl/VqL0n9YovC4XWP6AAD+lxnQL+cAv6nT+PI55PEsYGJyU5L3iAhHlpZnd8imUebWY1sCidAiRhCLOsHBgayS3CcbpjQWWK//wTCjnQxh2N/5Czgv8ros6g5xWJbgd+23TOalaCvKyS4USdxqCtRFp2J7BCeygAAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/mentors/karan.png": {
+    "src": "/images/mentors/karan-600.webp",
+    "srcSet": "/images/mentors/karan-300.webp 300w, /images/mentors/karan-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBQCdASoUABQAPu1srlIppaQiqAgBMB2JYwCzkftgHjCl8Qz0+O/k2TYGi0W0lGxgAAD4fM2VSUc0+nLPmw/AxSGaqdH9e4TeXUyUVu/N0HoIOcwlWFqfzVtFgGwwZIKaNf8KIXmewbDdr+bCxBvOiWZEOYKH8Z1kvX9AKvkkpOM3eyWrPTEzUeX2es0072cdLQfL6RMkvdlg6CFRcZNa0XmIwyAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/mentors/narendran_Head_of_Marketing_Mela_Ventures.png": {
+    "src": "/images/mentors/narendran-head-of-marketing-mela-ventures-600.webp",
+    "srcSet": "/images/mentors/narendran-head-of-marketing-mela-ventures-300.webp 300w, /images/mentors/narendran-head-of-marketing-mela-ventures-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAAAQBQCdASoUABQAPu1urlIppiQiqAgBMB2JQBUe5YJzkJKUBaQ+Py9c7c3s/HvtFHgAAP7uoVJm9q3ArxzF16q9chlEcfguE5E+L7YiLj2I5NhCChlONIvPIUx2mUXjI+xNedDM7q31ONuhTiveKXaNWQrRqv+Gc9VnGPuRluzeDl55N6PMHeHxV8u5B3lisc78tF4mLQ3uK4fQEFKSnIT4xYQw45Ps8eTGVJSJ/CTdvUhH7CfCRgK/3YyciF49ZAAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/mentors/prajwal-clueso.jpg": {
+    "src": "/images/mentors/prajwal-clueso-600.webp",
+    "srcSet": "/images/mentors/prajwal-clueso-300.webp 300w, /images/mentors/prajwal-clueso-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAACwBQCdASoUABYAPu1ur1KppiQiqAgBMB2JagDE5XAB6XiNfXmkNmU1OkILhU8CBVrSsswQ3gAA/s30eslkq0BNkAxD6oVfMxWqftlo8XyJvFK11yzkLAIXqDZNwSPC8reo5qdYvAAVZpr3SB9WfyxHMOd/bgGqUjssvQSNwjC+U/ToMRolmuqyjIq4lwxBqw7GQWwgMq480JpQjW3AT3wwzhJ2fRtAK9X7KVGyUTX4V325U6lh92TaDootPz/yavq1PgSc21H5/jtnhR8/ua4AAAA=",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/mentors/rishabh-dodo.jpeg": {
+    "src": "/images/mentors/rishabh-dodo-600.webp",
+    "srcSet": "/images/mentors/rishabh-dodo-300.webp 300w, /images/mentors/rishabh-dodo-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABQBQCdASoUABQAPu1wsFIppiSiqAgBMB2JZwCAAGUEnE9/Oevs7cUpBOuL2HaRHXI9thgA/u/SL3MqMC9PboqYc4hi+X3lWm8WoRmSq1EI4uJxs2180s2B8Y1Z+e6bNp/Gp95vZ2wNgvyz3UbXDVOFEvDISKLpw8+a0RCMjxbDEyrb8gZtMhwsThoVmtd/J4HzAAAA",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/mentors/vivek-raju.jpg": {
+    "src": "/images/mentors/vivek-raju-600.webp",
+    "srcSet": "/images/mentors/vivek-raju-300.webp 300w, /images/mentors/vivek-raju-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBQCdASoUABQAPu1uq1EppiOiqAqpMB2JZwC/OBI9oubNpFNl0S3vhQ3Wj49XOT8sAAD+zE7BENrdNyCbsHA/t2qlED+d2Uj77op33ZcKfHdOjLJPJldf03FMp+Ubnz5+M49ZB3OK8byVIZdy3mfTRtAAAA==",
+    "widths": [
+      300,
+      600
+    ]
+  },
+  "/images/hero-image/shipyard-builder-photoroom.png": {
+    "src": "/images/hero-image/shipyard-builder-photoroom-1280.webp",
+    "srcSet": "/images/hero-image/shipyard-builder-photoroom-640.webp 640w, /images/hero-image/shipyard-builder-photoroom-1280.webp 1280w",
+    "placeholder": "data:image/webp;base64,UklGRh4CAABXRUJQVlA4WAoAAAAQAAAAEwAAHQAAQUxQSCMBAAABkHPbtrG90ve5z2fbtiskKW27ZJ/SqWy7s22rsm1WNi928CqIiAnAXy/KU8H9roIQFG2YniwSkISjN8278ZCAFHrQOHaD50eQXYFRNN+4AGF+FHbwyCla92YCPF8Kjd/o6PhleDXE3zwaY3i6ITwcvj0MpCUddSd4fgQHaEhaPsyG+FBopelI8jtnwfMBHKSlb90GykfBJ/5uuWkpz0dDKQVkv6cjaTgQKzgYHn4feJuWdFzYeujX27mDB5VHC3Ke0NLyzirS7t18oW1MeBimUpOWA0bw25qRJ7uHA4i4QG2t4YFrfH/i4J3lPSDo6egYoOPz3inhC/cfOXXl3rPnz9+8f/386d0Lp891we8SFhGTnJ2fER8RpgCBCEIsAfv7rwIAVlA4INQAAAAQBQCdASoUAB4APu1oqU8ppiOiMBgIATAdiWUABmgVMENzmQ3pxgylvmkFWZAFBmAAAO069k8IDjc+2XG17y+LYw74hgv017rcaeOlWVg/UDyS+A+Vv1N8LMvuv5BAt+vRb65eRF5t8sPv6fIf0/d6b//z6+Gu1T/8lUYjh102op3Kfi1byLiA7Yin833ree9IKzACVc9tlOwxtTOxh+G+c26hKlT+NcobXdez3gpQdUCifH/1KihnX8+Qtk/7MFVYKmr50LAB9Q2ltBhF/59Qv2wAAA==",
+    "widths": [
+      640,
+      1280
+    ]
+  }
+}

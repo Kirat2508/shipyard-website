@@ -1,4 +1,6 @@
 import { mentors } from "../data/mentors";
+import { IMAGE_SIZES } from "../lib/optimizedImage";
+import { OptimizedImage } from "./OptimizedImage";
 
 export function MentorsSection() {
   return (
@@ -11,11 +13,14 @@ export function MentorsSection() {
         {mentors.map((mentor) => (
           <div key={mentor.id} className="supported-by-mentors__item">
             <div className="supported-by-mentors__portrait">
-              <img
-                src={mentor.imageSrc}
+              <OptimizedImage
+                originalSrc={mentor.imageSrc}
                 alt={`Portrait of ${mentor.name}, ${mentor.role}`}
-                width={400}
-                height={500}
+                className="h-full w-full object-cover object-top"
+                wrapperClassName="h-full w-full"
+                sizes={IMAGE_SIZES.mentor}
+                width={600}
+                height={750}
                 loading="lazy"
                 decoding="async"
               />

@@ -53,7 +53,8 @@ export function initHeroGallery(): void {
   clone.setAttribute("aria-hidden", "true");
   clone.classList.add("hero-gallery__strip--clone");
   clone.querySelectorAll("img").forEach((img) => {
-    img.removeAttribute("loading");
+    img.setAttribute("loading", "lazy");
+    img.setAttribute("decoding", "async");
   });
   track.appendChild(clone);
 

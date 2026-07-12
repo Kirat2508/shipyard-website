@@ -66,16 +66,30 @@
         <div class="hero__visual hero-primary-image" data-hero-primary>
           <div class="hero-primary-image__inner">
             <div class="hero-primary-image__frame" data-hero-primary-inner>
-              <img
-                class="hero-primary-image__img"
-                alt="Project Shipyard — community of AI builders"
-                width="1024"
-                height="1536"
-                decoding="async"
-                fetchpriority="high"
-                sizes="(max-width: 680px) 92vw, (min-width: 960px) min(680px, 46vw), 640px"
-                src="/images/hero-image/shipyard-builder-photoroom.png"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    /images/hero-image/shipyard-builder-photoroom-640.webp 640w,
+                    /images/hero-image/shipyard-builder-photoroom-1280.webp 1280w
+                  "
+                  sizes="(max-width: 680px) 92vw, (min-width: 960px) min(680px, 46vw), 640px"
+                />
+                <img
+                  class="hero-primary-image__img"
+                  alt="Project Shipyard — community of AI builders"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                  fetchpriority="high"
+                  sizes="(max-width: 680px) 92vw, (min-width: 960px) min(680px, 46vw), 640px"
+                  src="/images/hero-image/shipyard-builder-photoroom-1280.webp"
+                  srcset="
+                    /images/hero-image/shipyard-builder-photoroom-640.webp 640w,
+                    /images/hero-image/shipyard-builder-photoroom-1280.webp 1280w
+                  "
+                />
+              </picture>
             </div>
           </div>
         </div>

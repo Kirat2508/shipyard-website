@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import type { Fellow } from "../data/fellows";
+import { IMAGE_SIZES } from "../lib/optimizedImage";
+import { OptimizedImage } from "./OptimizedImage";
 
 function LinkedInMark({ className }: { className?: string }) {
   return (
@@ -52,10 +54,14 @@ export function FellowCard({ fellow }: { fellow: Fellow }) {
       <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-3xl border border-black/[0.08] bg-white shadow-sm transition-shadow duration-250 group-hover:shadow-md">
         <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-neutral-100">
           <div className="h-full w-full origin-center transition-transform duration-250 ease-out group-hover:scale-[1.04]">
-            <img
-              src={fellow.imageSrc}
+            <OptimizedImage
+              originalSrc={fellow.imageSrc}
               alt={`Portrait of ${fellow.name}, ${fellow.role}`}
               className="h-full w-full object-cover object-top"
+              wrapperClassName="h-full w-full"
+              sizes={IMAGE_SIZES.fellow}
+              width={800}
+              height={1000}
               loading="lazy"
               decoding="async"
             />
