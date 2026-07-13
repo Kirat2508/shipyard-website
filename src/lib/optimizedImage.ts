@@ -15,8 +15,8 @@ export function getOptimizedImage(originalSrc: string): OptimizedImageMeta | nul
 }
 
 export const IMAGE_SIZES = {
-  fellow: "(max-width: 640px) 88vw, (max-width: 1024px) 42vw, 280px",
-  gallery: "(max-width: 639px) 42vw, (max-width: 1023px) 28vw, 220px",
-  mentor: "(max-width: 640px) 72vw, (max-width: 1024px) 28vw, 200px",
+  fellow: "(max-width: 639px) 44vw, (max-width: 1023px) 42vw, 280px",
+  gallery: "(max-width: 639px) 46vw, (max-width: 1023px) 28vw, 220px",
+  mentor: "(max-width: 639px) 36vw, (max-width: 1023px) 28vw, 200px",
   hero: "(max-width: 680px) 92vw, (min-width: 960px) min(680px, 46vw), 640px",
 } as const;

@@ -17,6 +17,18 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/images/hero-image/shipyard-builder-photoroom-480.webp"
+      imagesrcset="
+        /images/hero-image/shipyard-builder-photoroom-480.webp 480w,
+        /images/hero-image/shipyard-builder-photoroom-640.webp 640w,
+        /images/hero-image/shipyard-builder-photoroom-1280.webp 1280w
+      "
+      imagesizes="(max-width: 680px) 92vw, (min-width: 960px) min(680px, 46vw), 640px"
+    />
     <!--
       Source: Google Stitch — "Landing Page - Project Shipyard (Pattern Refinement)"
       Screen: projects/1974210018818908575/screens/74ead00d31114e9dad872f1716c7d6ad
@@ -70,6 +82,7 @@
                 <source
                   type="image/webp"
                   srcset="
+                    /images/hero-image/shipyard-builder-photoroom-480.webp 480w,
                     /images/hero-image/shipyard-builder-photoroom-640.webp 640w,
                     /images/hero-image/shipyard-builder-photoroom-1280.webp 1280w
                   "
@@ -83,8 +96,9 @@
                   decoding="async"
                   fetchpriority="high"
                   sizes="(max-width: 680px) 92vw, (min-width: 960px) min(680px, 46vw), 640px"
-                  src="/images/hero-image/shipyard-builder-photoroom-1280.webp"
+                  src="/images/hero-image/shipyard-builder-photoroom-480.webp"
                   srcset="
+                    /images/hero-image/shipyard-builder-photoroom-480.webp 480w,
                     /images/hero-image/shipyard-builder-photoroom-640.webp 640w,
                     /images/hero-image/shipyard-builder-photoroom-1280.webp 1280w
                   "

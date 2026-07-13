@@ -55,6 +55,7 @@ export function initHeroGallery(): void {
   clone.querySelectorAll("img").forEach((img) => {
     img.setAttribute("loading", "lazy");
     img.setAttribute("decoding", "async");
+    img.setAttribute("fetchpriority", "low");
   });
   track.appendChild(clone);
 

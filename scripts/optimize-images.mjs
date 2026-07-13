@@ -19,23 +19,23 @@ const JOBS = [
   {
     id: "fellows",
     dir: "public/images/fellows",
-    widths: [400, 800],
-    quality: 85,
+    widths: [240, 480, 800],
+    quality: 84,
     fit: "cover",
   },
   {
     id: "gallery",
     dir: "public/images/gallery",
-    widths: [300, 600],
-    quality: 82,
+    widths: [180, 300, 480],
+    quality: 80,
     fit: "cover",
     square: true,
   },
   {
     id: "mentors",
     dir: "public/images/mentors",
-    widths: [300, 600],
-    quality: 85,
+    widths: [240, 480, 600],
+    quality: 84,
     fit: "cover",
   },
 ];
@@ -43,7 +43,7 @@ const JOBS = [
 const HERO_FILES = [
   {
     input: "public/images/hero-image/shipyard-builder-photoroom.png",
-    widths: [640, 1280],
+    widths: [480, 640, 1280],
     quality: 85,
   },
 ];
@@ -113,7 +113,7 @@ async function processFile(filePath, job) {
   const placeholder = `data:image/webp;base64,${placeholderBuf.toString("base64")}`;
 
   const widthList = job.widths;
-  const src = variants[Math.max(...widthList)];
+  const src = variants[Math.min(...widthList)];
   const srcSet = widthList.map((w) => `${variants[w]} ${w}w`).join(", ");
 
   return {
@@ -151,7 +151,7 @@ async function processHero(file) {
   return {
     key: manifestKey,
     entry: {
-      src: variants[Math.max(...file.widths)],
+      src: variants[Math.min(...file.widths)],
       srcSet,
       placeholder,
       widths: file.widths,

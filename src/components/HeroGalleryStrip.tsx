@@ -2,7 +2,19 @@ import { heroGallerySlides } from "../data/heroGallery";
 import { IMAGE_SIZES } from "../lib/optimizedImage";
 import { OptimizedImage } from "./OptimizedImage";
 
+const MOBILE_EAGER_COUNT = 2;
+const DESKTOP_EAGER_COUNT = 4;
+
+function eagerCountForViewport(): number {
+  if (typeof window === "undefined") return MOBILE_EAGER_COUNT;
+  return window.matchMedia("(max-width: 639px)").matches
+    ? MOBILE_EAGER_COUNT
+    : DESKTOP_EAGER_COUNT;
+}
+
 export function HeroGalleryStrip() {
+  const eagerCount = eagerCountForViewport();
+
   return (
     <div className="hero-gallery__strip" data-hero-marquee-strip>
       {heroGallerySlides.map((slide, index) => (
@@ -15,10 +27,11 @@ export function HeroGalleryStrip() {
                 className="hero-gallery__img"
                 wrapperClassName="hero-gallery__img-wrap"
                 sizes={IMAGE_SIZES.gallery}
-                width={600}
-                height={600}
-                loading={index < 6 ? "eager" : "lazy"}
+                width={480}
+                height={480}
+                loading={index < eagerCount ? "eager" : "lazy"}
                 decoding="async"
+                fetchPriority={index < eagerCount ? "auto" : "low"}
               />
             </div>
           </div>

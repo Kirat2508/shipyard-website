@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { getOptimizedImage } from "../lib/optimizedImage";
 
 type OptimizedImageProps = {
@@ -29,7 +28,6 @@ export function OptimizedImage({
   fetchPriority,
 }: OptimizedImageProps) {
   const opt = getOptimizedImage(originalSrc);
-  const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
 
   if (!opt || failed) {
@@ -54,13 +52,12 @@ export function OptimizedImage({
       srcSet={opt.srcSet}
       sizes={sizes}
       alt={alt}
-      className={`${className ?? ""} transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
+      className={className}
       width={width}
       height={height}
       loading={loading}
       decoding={decoding}
       fetchPriority={fetchPriority}
-      onLoad={() => setLoaded(true)}
       onError={() => setFailed(true)}
     />
   );

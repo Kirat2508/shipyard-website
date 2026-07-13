@@ -10,14 +10,34 @@ import { initSectionReveal } from "./sectionReveal";
 import { initSprintScrollspy } from "./sprintScrollspy";
 import "./index.css";
 
+function isMobileViewport(): boolean {
+  return window.matchMedia("(max-width: 639px)").matches;
+}
+
+function deferOnMobile(mount: () => void): void {
+  if (!isMobileViewport()) {
+    mount();
+    return;
+  }
+
+  const schedule =
+    window.requestIdleCallback ??
+    ((cb: IdleRequestCallback) =>
+      window.setTimeout(() => cb({ didTimeout: false, timeRemaining: () => 0 } as IdleDeadline), 250));
+
+  schedule(mount, { timeout: 1800 });
+}
+
 const galleryRoot = document.getElementById("hero-gallery-root");
 if (galleryRoot) {
-  createRoot(galleryRoot).render(
-    <StrictMode>
-      <HeroGalleryStrip />
-    </StrictMode>,
-  );
-  queueMicrotask(() => initHeroGallery());
+  deferOnMobile(() => {
+    createRoot(galleryRoot).render(
+      <StrictMode>
+        <HeroGalleryStrip />
+      </StrictMode>,
+    );
+    queueMicrotask(() => initHeroGallery());
+  });
 } else {
   initHeroGallery();
 }
@@ -28,20 +48,24 @@ initSprintScrollspy();
 
 const fellowsRoot = document.getElementById("fellows-root");
 if (fellowsRoot) {
-  createRoot(fellowsRoot).render(
-    <StrictMode>
-      <FellowsSection />
-    </StrictMode>,
-  );
+  deferOnMobile(() => {
+    createRoot(fellowsRoot).render(
+      <StrictMode>
+        <FellowsSection />
+      </StrictMode>,
+    );
+  });
 }
 
 const mentorsRoot = document.getElementById("mentors-root");
 if (mentorsRoot) {
-  createRoot(mentorsRoot).render(
-    <StrictMode>
-      <MentorsSection />
-    </StrictMode>,
-  );
+  deferOnMobile(() => {
+    createRoot(mentorsRoot).render(
+      <StrictMode>
+        <MentorsSection />
+      </StrictMode>,
+    );
+  });
 }
 
 requestAnimationFrame(() => {

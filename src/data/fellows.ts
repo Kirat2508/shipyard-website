@@ -30,7 +30,7 @@ const sashank: Fellow = {
   name: "Sashank",
   role: "Earshot",
   productUrl: "https://www.kupsas.com/earshot",
-  imageSrc: "/images/fellows/Sashank-800.webp",
+  imageSrc: "/images/fellows/Sashank.jpg",
   linkedinUrl: PLACEHOLDER_LINKEDIN,
   bio: "Human-in-the-loop social media automation to get leads for your business and build brand reputation.",
 };
