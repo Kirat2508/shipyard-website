@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { createClient } from "@supabase/supabase-js";
 
 import { applicationSchema, stripForStorage } from "./lib/applicationSchema.js";
+import { getSupabaseServerClient, supabaseFetchHint } from "./lib/supabaseServer.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -45,20 +45,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return;
     }
 
-    const url = process.env.SUPABASE_URL?.trim().replace(/\/$/, "");
-    const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
-    if (!url || !key) {
-      res.status(503).json({
-        error:
-          "Applications storage is not configured. Add SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in Vercel.",
+    const config = getSupabaseServerClient();
+    if (!config.ok) {
+      res.status(config.status).json({
+        error: "Applications storage is not configured.",
+        detail: config.detail,
+        hint: config.hint,
       });
       return;
     }
 
-    const supabase = createClient(url, key);
     const payload = stripForStorage(parsed.data);
 
-    const { error } = await supabase.from("shipyard_applications").insert({
+    const { error } = await config.client.from("shipyard_applications").insert({
       payload,
     });
 
@@ -67,12 +66,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       res.status(500).json({
         error: "Could not save application",
         detail: error.message,
-        hint:
-          error.code === "42501" || /row-level security|permission denied/i.test(error.message)
-            ? "Use the legacy service_role key (not anon) as SUPABASE_SERVICE_ROLE_KEY."
-            : error.code === "PGRST205" || /could not find the table/i.test(error.message)
-              ? "Run the SQL migration so table shipyard_applications exists in this project."
-              : undefined,
+        hint: supabaseFetchHint(error.message),
       });
       return;
     }
