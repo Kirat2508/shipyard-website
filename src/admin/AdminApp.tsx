@@ -55,17 +55,22 @@ export function AdminApp() {
         setLoggedIn(false);
         setRows([]);
         if (!opts?.quiet401) setError("Session expired. Sign in again.");
-        return;
+        return false;
       }
-      const data = (await res.json()) as { rows?: Row[]; error?: string };
+      const data = (await res.json()) as { rows?: Row[]; error?: string; detail?: string; hint?: string };
       if (!res.ok) {
-        setError(data.error ?? "Could not load data");
-        return;
+        const parts = [data.error, data.detail, data.hint].filter(
+          (s): s is string => typeof s === "string" && s.length > 0,
+        );
+        setError(parts.length > 0 ? parts.join(" — ") : "Could not load data");
+        return false;
       }
       setRows(data.rows ?? []);
       setLoggedIn(true);
+      return true;
     } catch {
       setError("Network error");
+      return false;
     } finally {
       if (!opts?.skipLoading) setLoading(false);
     }
@@ -102,7 +107,14 @@ export function AdminApp() {
         return;
       }
       setPassword("");
-      await loadRows();
+      const loaded = await loadRows();
+      if (!loaded) {
+        setError((prev) =>
+          prev
+            ? `Sign-in succeeded, but submissions could not be loaded. ${prev}`
+            : "Sign-in succeeded, but submissions could not be loaded. Check Supabase configuration on Vercel.",
+        );
+      }
     } catch {
       setError("Network error");
     } finally {

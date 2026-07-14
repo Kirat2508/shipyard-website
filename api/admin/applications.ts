@@ -52,8 +52,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     .limit(500);
 
   if (error) {
-    console.error(error);
-    res.status(500).json({ error: "Could not load applications" });
+    console.error("Supabase select:", error.code, error.message, error.details);
+    res.status(500).json({
+      error: "Could not load applications",
+      detail: error.message,
+      hint:
+        error.code === "42501" || /row-level security|permission denied/i.test(error.message)
+          ? "Use the legacy service_role key (not anon) as SUPABASE_SERVICE_ROLE_KEY."
+          : error.code === "PGRST205" || /could not find the table/i.test(error.message)
+            ? "Run supabase/migrations/001_shipyard_applications.sql in your Supabase SQL editor."
+            : /Invalid API key|JWT/i.test(error.message)
+              ? "SUPABASE_SERVICE_ROLE_KEY may be wrong or expired — copy the service_role key from Supabase → Settings → API."
+              : undefined,
+    });
     return;
   }
 

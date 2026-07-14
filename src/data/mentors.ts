@@ -43,7 +43,7 @@ const otherMentors: Mentor[] = [
   {
     id: "karan",
     name: "Karan Bhargav",
-    role: "Lead, Platform and Startup ecosystem",
+    role: "Lead, Platform and Startup ecosystem, Venture Catalysts",
     imageSrc: "/images/mentors/karan.png",
   },
   {
