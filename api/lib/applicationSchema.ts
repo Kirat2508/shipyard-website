@@ -29,6 +29,16 @@ export const COMMITMENT_LABELS: Record<(typeof COMMITMENT_VALUES)[number], strin
 const linkedInRefine = (s: string) =>
   /linkedin\.com/i.test(s.trim()) || /^https?:\/\//i.test(s.trim());
 
+/** WhatsApp number: digits with optional +, spaces, dashes or brackets; 10 to 15 digits with country code. */
+const whatsappField = z
+  .string()
+  .trim()
+  .min(1, "Add your WhatsApp number")
+  .max(30)
+  .refine((s) => /^\+?[\d\s()-]+$/.test(s) && /^\d{10,15}$/.test(s.replace(/\D/g, "")), {
+    message: "Enter a valid WhatsApp number with country code, e.g. +91 98765 43210",
+  });
+
 const stageField = z
   .string()
   .min(1, "Choose one option")
@@ -86,6 +96,7 @@ export const applicationStepSchemas = [
       .min(4)
       .max(500)
       .refine(linkedInRefine, { message: "Add a LinkedIn profile URL" }),
+    whatsapp: whatsappField,
     stage: stageField,
   }),
   z.object({
@@ -118,6 +129,7 @@ export const applicationSchema = z
       .min(4)
       .max(500)
       .refine(linkedInRefine, { message: "Add a LinkedIn profile URL" }),
+    whatsapp: whatsappField,
     stage: stageField,
     recentBuildLink: z.string().min(4, "Share a link").max(2000),
     wantToBuild: z

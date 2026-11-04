@@ -95,8 +95,9 @@ const season2Fellows: Fellow[] = [
   },
   {
     id: "bhuvanesh",
-    name: "Bhuvanesh",
+    name: "Bhuvaneswaran P",
     role: "Peach",
+    productUrl: "https://www.gotopeach.com/",
     imageSrc: "/images/fellows/bhuvanesh.jpg",
     linkedinUrl: PLACEHOLDER_LINKEDIN,
     bio: "Peach tells you if your brand shows up when buyers ask AI and exactly what to do if it doesn't.",
@@ -141,7 +142,7 @@ const season2Fellows: Fellow[] = [
     id: "chaitanya",
     name: "Chaitanya",
     role: "Mahaul",
-    productUrl: "https://www.atypicalchai.com/mahaul/",
+    productUrl: "https://kahanilab.com/",
     imageSrc: "/images/fellows/Chaitanya.jpg",
     linkedinUrl: PLACEHOLDER_LINKEDIN,
     bio: "Mahaul is a digital card game that takes any conversation beyond small talk via fun and engaging questions.",
@@ -223,6 +224,42 @@ const season1Fellows: Fellow[] = [
   },
 ];
 
+/** Fellows added for the S IV site. */
+const season4Additions: Fellow[] = [
+  {
+    id: "mohammed",
+    name: "Mohammed Hidayathulla",
+    role: "blute.ai",
+    productUrl: "https://www.blute.ai/",
+    imageSrc: "/images/fellows/mohammed-hidayathulla.webp",
+    linkedinUrl: "https://www.linkedin.com/in/mohammed-hidayathulla-90485a139/",
+  },
+  {
+    id: "guru",
+    name: "Guru Sasidhar Pattemru",
+    role: "Bloom UPSC",
+    productUrl: "https://bloomupsc.com/",
+    imageSrc: "/images/fellows/guru-sasidhar.png",
+    linkedinUrl: "https://www.linkedin.com/in/gurusasidhar/",
+  },
+  {
+    id: "vineet",
+    name: "Vineet Mehta",
+    role: "Mizual",
+    productUrl: "https://mizual.ai/",
+    imageSrc: "/images/fellows/vineet.webp",
+    linkedinUrl: "https://www.linkedin.com/in/vinm007/",
+  },
+  {
+    id: "anuj",
+    name: "Anuj",
+    role: "KahaniLab",
+    productUrl: "https://kahanilab.com/",
+    imageSrc: "/images/fellows/anuj.png",
+    linkedinUrl: "https://www.linkedin.com/in/anuj-khandalikar/",
+  },
+];
+
 /** Featured first, then Season 2, then remaining Season 1. */
 export const fellows: Fellow[] = [
   abhimanyu,
@@ -232,3 +269,26 @@ export const fellows: Fellow[] = [
   ...season2Fellows,
   ...season1Fellows,
 ];
+
+/** The fellows shown on the home page, in display order. */
+const FEATURED_IDS = [
+  "abhimanyu",
+  "sashank",
+  "mohammed",
+  "guru",
+  "kamalika",
+  "gursharan",
+  "renuka",
+  "vineet",
+  "chaitanya",
+  "anuj",
+  "bhuvanesh",
+];
+
+const allFellows = [...fellows, ...season4Additions];
+
+export const featuredFellows: Fellow[] = FEATURED_IDS.map((id) => {
+  const fellow = allFellows.find((f) => f.id === id);
+  if (!fellow) throw new Error(`Unknown featured fellow: ${id}`);
+  return fellow;
+});

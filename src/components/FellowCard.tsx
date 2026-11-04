@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
 import type { Fellow } from "../data/fellows";
 import { IMAGE_SIZES } from "../lib/optimizedImage";
 import { OptimizedImage } from "./OptimizedImage";
@@ -34,85 +34,71 @@ function ProductLinkIcon({ className }: { className?: string }) {
   );
 }
 
-const hoverTransition = { type: "tween" as const, duration: 0.28, ease: "easeOut" };
-
-export function FellowCard({ fellow }: { fellow: Fellow }) {
+export function FellowCard({ fellow, index, tilt }: { fellow: Fellow; index: number; tilt: number }) {
   const nameId = `fellow-name-${fellow.id}`;
   const label = `LinkedIn profile for ${fellow.name}`;
-  const bioTrimmed = fellow.bio?.trim();
+  const role = fellow.role.trim();
   const productUrl = fellow.productUrl?.trim();
-  const productLinkLabel = `Visit ${fellow.role} website (opens in new tab)`;
+  const productLinkLabel = `Visit ${role} website (opens in new tab)`;
+  const alt = role ? `Portrait of ${fellow.name}, ${role}` : `Portrait of ${fellow.name}`;
 
   return (
-    <motion.article
-      className="group relative flex h-full flex-col"
+    <article
+      className="sy-fellow"
       aria-labelledby={nameId}
-      initial={false}
-      whileHover={{ y: -6 }}
-      transition={hoverTransition}
+      style={{ "--tilt": `${tilt}deg` } as CSSProperties}
     >
-      <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-3xl border border-black/[0.08] bg-white shadow-sm transition-shadow duration-250 group-hover:shadow-md">
-        <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-neutral-100">
-          <div className="h-full w-full origin-center transition-transform duration-250 ease-out group-hover:scale-[1.04]">
-            <OptimizedImage
-              originalSrc={fellow.imageSrc}
-              alt={`Portrait of ${fellow.name}, ${fellow.role}`}
-              className="h-full w-full object-cover object-top"
-              wrapperClassName="h-full w-full"
-              sizes={IMAGE_SIZES.fellow}
-              width={800}
-              height={1000}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+      <div className="sy-fellow__photo">
+        <OptimizedImage
+          originalSrc={fellow.imageSrc}
+          alt={alt}
+          className="sy-fellow__img"
+          wrapperClassName="sy-fellow__img-wrap"
+          sizes={IMAGE_SIZES.fellow}
+          width={800}
+          height={1000}
+          loading="lazy"
+          decoding="async"
+        />
 
-          {/* Strong bottom scrim so white type reads on bright / busy photos (inspired by YC-style cards) */}
-          <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[60%] bg-[linear-gradient(to_top,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.72)_22%,rgba(0,0,0,0.38)_48%,rgba(0,0,0,0.12)_72%,transparent_100%)]"
-            aria-hidden="true"
-          />
+        {/* Fixed corner so every card has the LinkedIn link in the same place */}
+        <a
+          href={fellow.linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={label}
+          className="sy-fellow__linkedin"
+        >
+          <LinkedInMark className="sy-fellow__linkedin-icon" />
+        </a>
+      </div>
 
-          {/* Fixed corner so every card has the LinkedIn CTA in the same place */}
-          <a
-            href={fellow.linkedinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={label}
-            className="pointer-events-auto absolute right-4 top-4 z-30 flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#0A66C2] text-white shadow-md ring-1 ring-white/15 transition hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-          >
-            <LinkedInMark className="size-4 text-white" />
-          </a>
-
-          <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-4 pt-2 sm:px-5 sm:pb-5 [&_h3]:[text-shadow:0_1px_3px_rgba(0,0,0,0.9)] [&_p]:[text-shadow:0_1px_3px_rgba(0,0,0,0.9)]">
-            <h3
-              id={nameId}
-              className="min-w-0 font-sans text-sm font-semibold leading-snug tracking-tight text-white sm:text-base lg:text-[0.9375rem]"
-            >
-              {fellow.name}
-            </h3>
-            <div className="mt-1 flex flex-wrap items-center gap-x-1 font-sans text-xs font-normal leading-snug text-white sm:text-sm lg:text-[0.8125rem] [text-shadow:0_1px_3px_rgba(0,0,0,0.9)]">
-              <span className="min-w-0">{fellow.role}</span>
+      <div className="sy-fellow__caption">
+        <span className="sy-fellow__num" aria-hidden="true">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <div>
+          <h3 id={nameId} className="sy-fellow__name">
+            {fellow.name}
+          </h3>
+          {role ? (
+            <div className="sy-fellow__meta">
+              <span>{role}</span>
               {productUrl ? (
                 <a
                   href={productUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={productLinkLabel}
-                  className="pointer-events-auto inline-flex shrink-0 items-center rounded-sm text-white opacity-95 ring-offset-2 ring-offset-transparent transition hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/90"
+                  className="sy-fellow__product"
                 >
-                  <ProductLinkIcon className="h-[1em] w-[1em] translate-y-px drop-shadow-[0_1px_2px_rgba(0,0,0,0.85)]" />
+                  <ProductLinkIcon className="sy-fellow__product-icon" />
                 </a>
               ) : null}
             </div>
-            {bioTrimmed ? (
-              <p className="mt-1 line-clamp-3 font-sans text-[0.6875rem] font-normal leading-relaxed text-white/95 sm:text-xs sm:leading-relaxed lg:line-clamp-2 lg:text-[0.7rem] lg:leading-relaxed">
-                {bioTrimmed}
-              </p>
-            ) : null}
-          </div>
+          ) : null}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }

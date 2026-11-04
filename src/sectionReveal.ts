@@ -29,7 +29,8 @@ export function initSectionReveal(): void {
     {
       root: null,
       rootMargin: "-5% 0px -10% 0px",
-      threshold: 0.1,
+      // Any pixel counts: on phones the fellows section is ~13 viewports tall and can never reach 10% visible.
+      threshold: 0,
     },
   );
 

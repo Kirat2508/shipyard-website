@@ -15,9 +15,9 @@ export function MentorsSection() {
             <div className="supported-by-mentors__portrait">
               <OptimizedImage
                 originalSrc={mentor.imageSrc}
-                alt={`Portrait of ${mentor.name}, ${mentor.role}`}
-                className="h-full w-full object-cover object-top"
-                wrapperClassName="h-full w-full"
+                alt={mentor.role ? `Portrait of ${mentor.name}, ${mentor.role}` : `Portrait of ${mentor.name}`}
+                className="supported-by-mentors__img"
+                wrapperClassName="supported-by-mentors__img-wrap"
                 sizes={IMAGE_SIZES.mentor}
                 width={600}
                 height={750}
@@ -27,7 +27,7 @@ export function MentorsSection() {
             </div>
             <div className="supported-by-mentors__text">
               <div className="supported-by-mentors__name">{mentor.name}</div>
-              <div className="supported-by-mentors__role">{mentor.role}</div>
+              {mentor.role ? <div className="supported-by-mentors__role">{mentor.role}</div> : null}
             </div>
           </div>
         ))}

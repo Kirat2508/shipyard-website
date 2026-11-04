@@ -5,7 +5,29 @@ export type Mentor = {
   imageSrc: string;
 };
 
-/** Co-founders shown first in the mentors grid; Rishabh leads the row. */
+/** S IV speakers, shown first; Pulkit leads the row. */
+const featuredSpeakers: Mentor[] = [
+  {
+    id: "pulkit",
+    name: "Pulkit Jain",
+    role: "Co-Founder, Vedantu",
+    imageSrc: "/images/mentors/pulkit-jain.png",
+  },
+  {
+    id: "manikantha",
+    name: "Manikantha",
+    role: "Head of Product, Sarvam",
+    imageSrc: "/images/mentors/manikantha.png",
+  },
+  {
+    id: "varun",
+    name: "Varun Kashyap",
+    role: "",
+    imageSrc: "/images/mentors/varun-kashyap.webp",
+  },
+];
+
+/** Co-founders shown next in the mentors grid; Rishabh leads the row. */
 const founderMentors: Mentor[] = [
   {
     id: "rishabh",
@@ -66,4 +88,4 @@ const otherMentors: Mentor[] = [
   },
 ];
 
-export const mentors = [...founderMentors, ...otherMentors];
+export const mentors = [...featuredSpeakers, ...founderMentors, ...otherMentors];

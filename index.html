@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Project Shipyard — a weekend playground for ambitious AI builders. Presented by AI Learn Circle."
+      content="Project Shipyard: a weekend playground for ambitious AI builders. Presented by AI Learn Circle."
     />
     <title>Project Shipyard | AI Learn Circle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css" />
@@ -21,60 +19,65 @@
       rel="preload"
       as="image"
       type="image/webp"
-      href="/images/hero-image/shipyard-builder-photoroom-480.webp"
-      imagesrcset="
-        /images/hero-image/shipyard-builder-photoroom-480.webp 480w,
-        /images/hero-image/shipyard-builder-photoroom-640.webp 640w,
-        /images/hero-image/shipyard-builder-photoroom-1280.webp 1280w
-      "
-      imagesizes="(max-width: 680px) 92vw, (min-width: 960px) min(680px, 46vw), 640px"
+      href="/images/s4/hero-garden-1280.webp"
+      imagesrcset="/images/s4/hero-garden-768.webp 768w, /images/s4/hero-garden-1280.webp 1280w, /images/s4/hero-garden-1672.webp 1672w"
+      imagesizes="100vw"
+      fetchpriority="high"
     />
-    <!--
-      Source: Google Stitch — "Landing Page - Project Shipyard (Pattern Refinement)"
-      Screen: projects/1974210018818908575/screens/74ead00d31114e9dad872f1716c7d6ad
-      Design tokens: Shipyard Cinematic Editorial (Design.md)
-    -->
+    <script>
+      /* S IV intro gate: once per session, never with reduced motion. Sets a stage cover before first paint. */
+      (function () {
+        try {
+          if (
+            !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+            !sessionStorage.getItem("sy-intro-seen")
+          ) {
+            document.documentElement.classList.add("intro-pending");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="pattern-surface">
+  <body class="s4">
     <main>
-      <section
-        class="hero hero--with-visual px-page"
-        aria-label="Project Shipyard — weekend playground for AI builders"
-      >
-        <div class="hero__inner">
-          <p class="label-caps hero__label" style="margin: 0 0 1rem; opacity: 0.7">
-            <a
-              class="hero__presenter-link"
-              href="https://www.linkedin.com/company/ai-learn-circle/"
-              target="_blank"
-              rel="noopener noreferrer"
+      <section class="sy-hero" data-sy-hero aria-labelledby="hero-heading">
+        <div class="sy-hero__bg">
+          <img
+            src="/images/s4/hero-garden-1280.webp"
+            srcset="
+              /images/s4/hero-garden-768.webp   768w,
+              /images/s4/hero-garden-1280.webp 1280w,
+              /images/s4/hero-garden-1672.webp 1672w
+            "
+            sizes="100vw"
+            alt=""
+            width="1672"
+            height="941"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <div class="sy-hero__copy">
+          <p class="sy-hero__label">
+            <a class="sy-hero__alc" href="https://www.linkedin.com/company/ai-learn-circle/" target="_blank" rel="noopener noreferrer"
+              ><img class="sy-alc" src="/images/s4/brand/ai-learn-circle.webp" alt="AI Learn Circle" width="720" height="314" decoding="async" /></a
             >
-              AI Learn Circle
-            </a>
-            <span class="hero__presents">presents</span>
+            <span class="sy-hero__presents">presents</span>
           </p>
-          <h1 class="display-hero">
-            Project <span style="font-style: italic">Shipyard</span>
-          </h1>
-          <p class="hero__sub body-lg">
-            A weekend playground for the internet’s ambitious AI<br />
-            builders obsessed with
-            <span class="editorial-intro__hl editorial-intro__hl--static">shipping</span>.
+          <h1 class="sy-hero__title" id="hero-heading">Project <em>Shipyard</em></h1>
+          <p class="sy-hero__sub">
+            A weekend playground for the internet’s ambitious AI builders obsessed with <em>shipping</em>.
           </p>
-          <div style="display: flex; justify-content: center">
-            <a href="/apply" class="btn-primary"
-              ><span class="btn__label btn__label--default">Apply Now</span>
-              <span class="btn__label btn__label--hover">let&apos;s ship it</span>
-              <span class="material-symbols-outlined btn__icon btn__icon--default" aria-hidden="true"
-                >arrow_forward</span
-              >
-              <span class="material-symbols-outlined btn__icon btn__icon--hover" aria-hidden="true"
-                >rocket_launch</span
-              >
-            </a>
+          <div>
+            <a class="sy-pill" href="/apply"
+              ><span class="sy-pill__swap"><span>apply now</span><span aria-hidden="true">let&apos;s ship it</span></span
+              ><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" /></svg
+            ></a>
           </div>
         </div>
+      </section>
 
+      <section class="sy-builder" aria-label="Project Shipyard community of AI builders">
         <div class="hero__visual hero-primary-image" data-hero-primary>
           <div class="hero-primary-image__inner">
             <div class="hero-primary-image__frame" data-hero-primary-inner>
@@ -94,7 +97,7 @@
                   width="1024"
                   height="1536"
                   decoding="async"
-                  fetchpriority="high"
+                  loading="lazy"
                   sizes="(max-width: 680px) 92vw, (min-width: 960px) min(680px, 46vw), 640px"
                   src="/images/hero-image/shipyard-builder-photoroom-480.webp"
                   srcset="
@@ -118,7 +121,7 @@
       </div>
       </section>
 
-      <section class="editorial-intro px-page reveal-on-scroll" aria-label="About AI Learn Circle and Project Shipyard">
+      <section id="story" class="editorial-intro sy-gutter reveal-on-scroll" aria-label="About AI Learn Circle and Project Shipyard">
         <div class="max-w-content">
           <div class="editorial-intro__column">
             <p class="editorial-intro__lead editorial-intro__block">
@@ -175,29 +178,29 @@
         </div>
       </section>
 
-      <section class="section sprint-system px-page reveal-on-scroll" aria-labelledby="sprint-system-heading">
-        <div class="max-w-content">
-          <h2 class="heading-section heading-section--fold" id="sprint-system-heading">
-            The 3 Sunday Sprint System
-          </h2>
+      <section id="sprints" class="sy-section sy-dark sprint-system reveal-on-scroll" aria-labelledby="sprint-system-heading">
+        <div class="sy-wrap">
+          <div class="sy-section-head">
+            <p class="sy-kicker">The 3 Sunday Sprint System</p>
+            <h2 class="sy-kin" id="sprint-system-heading" data-sy-kinetic data-accent="6">Three Sundays</h2>
+          </div>
           <div class="sprint-system__layout">
             <nav class="sprint-system__nav" aria-label="Sprint Sundays">
-              <a class="sprint-system__nav-link is-active" href="#sunday-1" aria-current="true">Sunday 1</a>
-              <a class="sprint-system__nav-link" href="#sunday-2">Sunday 2</a>
-              <a class="sprint-system__nav-link" href="#sunday-3">Sunday 3</a>
-              <a class="sprint-system__nav-link" href="#product-showcase">Product Showcase</a>
+              <a class="sprint-system__nav-link is-active" href="#sunday-1" aria-current="true">sunday i</a>
+              <a class="sprint-system__nav-link" href="#sunday-2">sunday ii</a>
+              <a class="sprint-system__nav-link" href="#sunday-3">sunday iii</a>
+              <a class="sprint-system__nav-link" href="#product-showcase">showcase</a>
             </nav>
             <div class="sprint-system__panels">
-              <article id="sunday-1" class="sprint-panel is-active">
-                <div class="sprint-panel__header">
-                  <h3 class="sprint-panel__title">Ideate</h3>
-                  <span class="material-symbols-outlined sprint-panel__icon" aria-hidden="true">lightbulb</span>
-                </div>
-                <p class="sprint-panel__lede">
+              <article id="sunday-1" class="sprint-panel sy-sprint is-active">
+                <div class="sy-sprint__num" aria-hidden="true">I</div>
+                <p class="sy-sprint__kicker">Sunday I</p>
+                <h3 class="sy-sprint__title">Ideate</h3>
+                <p class="sy-sprint__body">
                   You may come in with an idea or you may not. Both are fine. You leave with a problem worth
                   solving and early proof that someone else thinks so too.
                 </p>
-                <ul class="sprint-panel__list">
+                <ul>
                   <li>Find or sharpen your idea by talking about real problems in the room.</li>
                   <li>Decide who you are building for and what pain you are solving.</li>
                   <li>
@@ -205,15 +208,14 @@
                   </li>
                 </ul>
               </article>
-              <article id="sunday-2" class="sprint-panel">
-                <div class="sprint-panel__header">
-                  <h3 class="sprint-panel__title">Build</h3>
-                  <span class="material-symbols-outlined sprint-panel__icon" aria-hidden="true">terminal</span>
-                </div>
-                <p class="sprint-panel__lede">
+              <article id="sunday-2" class="sprint-panel sy-sprint">
+                <div class="sy-sprint__num" aria-hidden="true">II</div>
+                <p class="sy-sprint__kicker">Sunday II</p>
+                <h3 class="sy-sprint__title">Build</h3>
+                <p class="sy-sprint__body">
                   Heads down. You build the thing. Mentors are in the room.
                 </p>
-                <ul class="sprint-panel__list">
+                <ul>
                   <li>Get one full flow working end to end.</li>
                   <li>Fix what breaks with help from people who have been there.</li>
                   <li>
@@ -222,16 +224,15 @@
                   </li>
                 </ul>
               </article>
-              <article id="sunday-3" class="sprint-panel">
-                <div class="sprint-panel__header">
-                  <h3 class="sprint-panel__title">GTM</h3>
-                  <span class="material-symbols-outlined sprint-panel__icon" aria-hidden="true">rocket_launch</span>
-                </div>
-                <p class="sprint-panel__lede">
+              <article id="sunday-3" class="sprint-panel sy-sprint">
+                <div class="sy-sprint__num" aria-hidden="true">III</div>
+                <p class="sy-sprint__kicker">Sunday III</p>
+                <h3 class="sy-sprint__title">GTM</h3>
+                <p class="sy-sprint__body">
                   You stop building and start moving. This Sunday is about getting your product in front of the
                   right people and making them use it or pay for it.
                 </p>
-                <ul class="sprint-panel__list">
+                <ul>
                   <li>Define who you are targeting and why they should care right now.</li>
                   <li>
                     Pick your GTM motion and execute it in the room. Cold emails written, leads found, content
@@ -240,15 +241,14 @@
                   <li>Leave with a week one plan, not a slide about a week one plan.</li>
                 </ul>
               </article>
-              <article id="product-showcase" class="sprint-panel">
-                <div class="sprint-panel__header">
-                  <h3 class="sprint-panel__title">Product Showcase</h3>
-                  <span class="material-symbols-outlined sprint-panel__icon" aria-hidden="true">slideshow</span>
-                </div>
-                <p class="sprint-panel__lede">
+              <article id="product-showcase" class="sprint-panel sy-sprint">
+                <div class="sy-sprint__num" aria-hidden="true">IV</div>
+                <p class="sy-sprint__kicker">Showcase</p>
+                <h3 class="sy-sprint__title">Product Showcase</h3>
+                <p class="sy-sprint__body">
                   You show what you built to a room full of builders, guests, and mentors.
                 </p>
-                <ul class="sprint-panel__list">
+                <ul>
                   <li>Walk through the live product and show the real user journey.</li>
                   <li>Share what worked, what did not, and what you would do next.</li>
                   <li>Get specific feedback from peers and mentors in one focused session.</li>
@@ -259,11 +259,23 @@
         </div>
       </section>
 
-      <div id="fellows-root"></div>
+      <section id="fellows" class="sy-section sy-fellows reveal-on-scroll" aria-labelledby="fellows-heading">
+        <div class="sy-wrap sy-fellows__layout">
+          <div class="sy-fellows__intro">
+            <h2 class="sy-kin sy-kin--stacked" id="fellows-heading" data-sy-kinetic data-italic="1">Shipyard Fellows</h2>
+            <p class="sy-fellows__lede">
+              60+ builders came to Shipyard with a question and left with something they could finally point to.
+            </p>
+          </div>
+          <div id="fellows-root"></div>
+        </div>
+      </section>
 
-      <section class="section logos px-page reveal-on-scroll">
-        <div class="max-w-content">
-          <h2 class="heading-section heading-section--fold">Supported By</h2>
+      <section id="supported-by" class="sy-section logos reveal-on-scroll" aria-labelledby="supported-heading">
+        <div class="sy-wrap">
+          <div class="sy-section-head">
+            <h2 class="sy-kin" id="supported-heading" data-sy-kinetic data-accent="10">Supported By</h2>
+          </div>
           <div class="logos-stack">
             <div class="logos-row">
               <div class="logo-slot">
@@ -323,29 +335,73 @@
                   decoding="async"
                 />
               </div>
+              <div class="logo-slot">
+                <img
+                  class="logo-img"
+                  src="/images/logos/dodo-payments.png"
+                  alt="Dodo Payments"
+                  width="826"
+                  height="131"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="logo-slot logo-slot--mark">
+                <img
+                  class="logo-img"
+                  src="/images/logos/vaani-ai.png"
+                  alt="Vaani AI"
+                  width="437"
+                  height="498"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
           <div id="mentors-root"></div>
         </div>
       </section>
-
-      <section class="section final-cta px-page reveal-on-scroll">
-        <div class="final-cta__inner">
-          <h2 class="heading-section heading-section--fold">Your next idea deserves to be shipped.</h2>
-          <a href="/apply" class="btn-on-dark"
-            ><span class="btn__label btn__label--default">Apply Now</span>
-            <span class="btn__label btn__label--hover">let&apos;s ship it</span>
-            <span class="material-symbols-outlined btn__icon btn__icon--default" aria-hidden="true"
-              >arrow_forward</span
-            >
-            <span class="material-symbols-outlined btn__icon btn__icon--hover" aria-hidden="true"
-              >rocket_launch</span
-            >
-          </a>
-          <p class="note body-md">Limited spaces available for the current intake.</p>
-        </div>
-      </section>
     </main>
+
+    <footer class="sy-foot" aria-labelledby="final-cta-heading">
+      <div class="sy-foot__bg" aria-hidden="true">
+        <img
+          src="/images/s4/hero-garden-1280.webp"
+          srcset="
+            /images/s4/hero-garden-768.webp   768w,
+            /images/s4/hero-garden-1280.webp 1280w,
+            /images/s4/hero-garden-1672.webp 1672w
+          "
+          sizes="100vw"
+          alt=""
+          width="1672"
+          height="941"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="sy-foot__cta">
+        <h2 class="sy-foot__title" id="final-cta-heading">Your next idea deserves to be shipped.</h2>
+        <a class="sy-pill" href="/apply"
+          ><span class="sy-pill__swap"><span>apply now</span><span aria-hidden="true">let&apos;s ship it</span></span
+          ><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" /></svg></a
+        >
+        <p class="sy-foot__note">Limited spaces available for the current intake.</p>
+      </div>
+      <div class="sy-foot__mark" data-sy-wordmark>
+        <div class="sy-drop" role="img" aria-label="Project Shipyard">
+          <div class="sy-drop__kicker">Project</div>
+          <div class="sy-drop__word">Shipyard</div>
+        </div>
+      </div>
+      <p class="sy-foot__credit">
+        <span>Presented by</span>
+        <a href="https://www.linkedin.com/company/ai-learn-circle/" target="_blank" rel="noopener noreferrer"
+          ><img class="sy-alc" src="/images/s4/brand/ai-learn-circle.webp" alt="AI Learn Circle" width="720" height="314" loading="lazy" decoding="async" /></a
+        >
+      </p>
+    </footer>
 
     <script type="module" src="/src/main.tsx"></script>
   </body>

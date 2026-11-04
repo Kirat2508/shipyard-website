@@ -11,6 +11,7 @@ type Row = {
 const PAYLOAD_KEYS = [
   "fullName",
   "linkedIn",
+  "whatsapp",
   "stage",
   "recentBuildLink",
   "wantToBuild",
@@ -189,6 +190,7 @@ export function AdminApp() {
               <th>Date</th>
               <th>Name</th>
               <th>LinkedIn</th>
+              <th>WhatsApp</th>
               <th>Stage</th>
               <th>Commitment</th>
               <th>Solo / team</th>
@@ -204,6 +206,15 @@ export function AdminApp() {
                   {r.payload?.linkedIn ? (
                     <a href={r.payload.linkedIn} target="_blank" rel="noreferrer">
                       Link
+                    </a>
+                  ) : (
+                    "—"
+                  )}
+                </td>
+                <td>
+                  {r.payload?.whatsapp ? (
+                    <a href={`https://wa.me/${r.payload.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer">
+                      {r.payload.whatsapp}
                     </a>
                   ) : (
                     "—"

@@ -1,21 +1,16 @@
-import { fellows } from "../data/fellows";
+import { featuredFellows } from "../data/fellows";
 import { FellowCard } from "./FellowCard";
 
+/** Gentle alternating tilt, like photos pinned to a board. */
+const TILTS = [-2, 1.5, -1, 2];
+
+/** Polaroid grid of the featured fellows; the section shell and heading live in index.html. */
 export function FellowsSection() {
   return (
-    <section
-      className="reveal-on-scroll bg-white px-[5vw] py-[var(--fold-gap)]"
-      aria-label="Recent fellows"
-    >
-      <div className="mx-auto max-w-[1440px]">
-        <h2 className="heading-section heading-section--fold">Shipyard Fellows</h2>
-
-        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {fellows.map((fellow) => (
-            <FellowCard key={fellow.id} fellow={fellow} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="sy-fellows__grid">
+      {featuredFellows.map((fellow, i) => (
+        <FellowCard key={fellow.id} fellow={fellow} index={i} tilt={TILTS[i % TILTS.length]} />
+      ))}
+    </div>
   );
 }

@@ -698,5 +698,75 @@
       640,
       1280
     ]
+  },
+  "/images/fellows/mohammed-hidayathulla.webp": {
+    "src": "/images/fellows/mohammed-hidayathulla-240.webp",
+    "srcSet": "/images/fellows/mohammed-hidayathulla-240.webp 240w, /images/fellows/mohammed-hidayathulla-480.webp 480w, /images/fellows/mohammed-hidayathulla-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBACdASoUABQAPu1mqk8ppaOiKA1RMB2JQBYdggtSUQ/ChWD3k0eGAADbT7OV364nFeB8d5CZgFmVaCrPLBRu7Bil55oTvjlk0LcIEhzQSx+Xk3qnRaKy8rf9q8nJVT3j/xzQOZk4j0NOYguKDVLz8os11Ks42olLDk+Rd3TL/ROVOMVADLbMgXAAAA==",
+    "widths": [
+      240,
+      480,
+      800
+    ]
+  },
+  "/images/fellows/guru-sasidhar.png": {
+    "src": "/images/fellows/guru-sasidhar-240.webp",
+    "srcSet": "/images/fellows/guru-sasidhar-240.webp 240w, /images/fellows/guru-sasidhar-480.webp 480w, /images/fellows/guru-sasidhar-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAABwBQCdASoUABQAPu1sqlEppaOiqAqpMB2JZAC06YtAdGPffHNKyhKJsmEc3OlWvMZGsjiAAP7ze30k59vxkhA8QXWqj9szNzieykINPm6GpPsMtUG9s/qsel1TchJ0ioLSoBD3/51iitpObwjOLxdqZCRBVKYYnn42UD7zjObHzic+9YRmW+FvW8nwiS9M38SmYggBNXGKDCME9um39kk2kuv3sVl/OdOI7j/vZFk2FhTAAAA=",
+    "widths": [
+      240,
+      480,
+      800
+    ]
+  },
+  "/images/fellows/vineet.webp": {
+    "src": "/images/fellows/vineet-240.webp",
+    "srcSet": "/images/fellows/vineet-240.webp 240w, /images/fellows/vineet-480.webp 480w, /images/fellows/vineet-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQBACdASoUABQAPu1sqlEppaOiqAqpMB2JQBYdsXNNe57NiFXaeb404H+jGhQPAAD+w/2k68Rij8AZC+DRdGzAvHO3X4M8eQKa4jVxIQvabSDHZfjNDEUFZoEYYAMqN5Q+MvHK8IVVShBqelQkQHzbzYr18YFnvhn+/SvBPH6E+uuEMoe0dQFRQORIOe0+xjrBKh14wAA=",
+    "widths": [
+      240,
+      480,
+      800
+    ]
+  },
+  "/images/fellows/anuj.png": {
+    "src": "/images/fellows/anuj-240.webp",
+    "srcSet": "/images/fellows/anuj-240.webp 240w, /images/fellows/anuj-480.webp 480w, /images/fellows/anuj-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACwBACdASoUABQAPu1wsFIppiSiqAgBMB2JQBOgAhpIuIuz3aiFGEzyiOGuReGGAP6Zt6A0m7bwTooLG7BcHyxNI4IfJmZxj8KZjIbx0DIXg/o8FG/lHT0npPPEaYG1LoyIsNsiX0/bkxLkvXg5nbPMFxhzj8KGUc1VHcQPHqsZuSNqWFyCndbTObIOTEndzEOxpVe1VfBMTzwxWTWftVJKDk1eAAAA",
+    "widths": [
+      240,
+      480,
+      800
+    ]
+  },
+  "/images/mentors/pulkit-jain.png": {
+    "src": "/images/mentors/pulkit-jain-240.webp",
+    "srcSet": "/images/mentors/pulkit-jain-240.webp 240w, /images/mentors/pulkit-jain-480.webp 480w, /images/mentors/pulkit-jain-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAABwBQCdASoUABUAPu1wsFIppiSiqAgBMB2JZACdMoAltQqlrnvn3JsEzjFIcvLribnupe8IAP4dQ6jc1EckfIY1YuB1g0EJsCW0nj/OXkXlDhkPP0cZNCAqivaPt/922qcnzbaQUcB+GfTTes4B3hVCdHW5b9vqGb2fzJT96CusLatf16rocomk81vsWs/zE3eOFVsgOPATzjpdow8Cp7JAMK4sVQi3YODpFHRA5HnVGHs75QW3ULL9xx8MeZ9Lds/jQa7QbM7P1+AA",
+    "widths": [
+      240,
+      480,
+      600
+    ]
+  },
+  "/images/mentors/manikantha.png": {
+    "src": "/images/mentors/manikantha-240.webp",
+    "srcSet": "/images/mentors/manikantha-240.webp 240w, /images/mentors/manikantha-480.webp 480w, /images/mentors/manikantha-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAADQBACdASoUABQAPu1qqVAppaOiqA1RMB2JZQDI88AA+Y5f8mSRAfMt0JvJe1C6AAD9c8fVElHsIPuiPntFAeSgm2XhepUi8/jMtqWj0WsazBczMO0PF3d6d+v5A6a9wm72rFPaLAAgTZY9ZS6KNmOW0vSQ6YXAmKNX+3N/eFYEvFqMHOkzW6jT3vvHXGQUlgc4UOdV6ADLwEs/YDqXnEENYAAAAA==",
+    "widths": [
+      240,
+      480,
+      600
+    ]
+  },
+  "/images/mentors/varun-kashyap.webp": {
+    "src": "/images/mentors/varun-kashyap-240.webp",
+    "srcSet": "/images/mentors/varun-kashyap-240.webp 240w, /images/mentors/varun-kashyap-480.webp 480w, /images/mentors/varun-kashyap-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQBACdASoUABQAPu1qq1EppaOiqAqpMB2JbACo9BBWHuGUWWyUPZcXpPEUwbkaAAD+vhpOhIdmxFJRfIPwxbciBi6mHmT+5wd3XPrjfXDFJ+P4ySofpYwgxF/Fjc1lWOHk3zAAJcCo/VPb13NpMEyRltqlLJt63qa5fTiPoJtQ6ChLvilIz/mBz+EMhNUN/PUwN0xRHAA=",
+    "widths": [
+      240,
+      480,
+      600
+    ]
   }
 }

@@ -8,7 +8,36 @@ import { initHeroGallery } from "./heroGallery";
 import { initHeroVisualScroll } from "./heroVisualScroll";
 import { initSectionReveal } from "./sectionReveal";
 import { initSprintScrollspy } from "./sprintScrollspy";
+import { initWordmarkOnView } from "./intro/WordmarkDrop";
+import { initHeroParallax, playHeroEntrance } from "./s4/hero";
+import { initKineticHeadlines } from "./s4/kineticHeadline";
 import "./index.css";
+
+const HERO_IMAGE_FALLBACK = "/images/s4/hero-garden-1280.webp";
+
+/* S IV opening sequence: loaded as its own chunk, only when the head script flagged this visit. */
+if (document.documentElement.classList.contains("intro-pending")) {
+  const hero = document.querySelector<HTMLElement>("[data-sy-hero]");
+  if (hero) {
+    void Promise.all([import("./intro/IntroSequence"), import("./intro/collageFrames")]).then(
+      ([{ runIntro }, { collageFrames }]) =>
+        runIntro({
+          frames: collageFrames(),
+          hero,
+          heroImageSrc: hero.querySelector<HTMLImageElement>(".sy-hero__bg img")?.currentSrc || HERO_IMAGE_FALLBACK,
+          onHeroOpen: playHeroEntrance,
+        }),
+    ).catch(() => document.documentElement.classList.remove("intro-pending"));
+  } else {
+    document.documentElement.classList.remove("intro-pending");
+  }
+}
+
+initHeroParallax();
+initKineticHeadlines();
+
+const footerMark = document.querySelector<HTMLElement>("[data-sy-wordmark]");
+if (footerMark) initWordmarkOnView(footerMark);
 
 function isMobileViewport(): boolean {
   return window.matchMedia("(max-width: 639px)").matches;
