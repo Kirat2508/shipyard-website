@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily: {
         serif: ["Newsreader", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Geist", "system-ui", "sans-serif"],
       },
       transitionDuration: {
         250: "250ms",

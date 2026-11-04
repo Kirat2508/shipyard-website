@@ -16,8 +16,8 @@ export function MentorsSection() {
               <OptimizedImage
                 originalSrc={mentor.imageSrc}
                 alt={`Portrait of ${mentor.name}, ${mentor.role}`}
-                className="h-full w-full object-cover object-top"
-                wrapperClassName="h-full w-full"
+                className="supported-by-mentors__img"
+                wrapperClassName="supported-by-mentors__img-wrap"
                 sizes={IMAGE_SIZES.mentor}
                 width={600}
                 height={750}
