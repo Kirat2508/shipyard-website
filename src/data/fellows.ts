@@ -258,6 +258,14 @@ const season4Additions: Fellow[] = [
     imageSrc: "/images/fellows/anuj.png",
     linkedinUrl: "https://www.linkedin.com/in/anuj-khandalikar/",
   },
+  {
+    id: "sameena",
+    name: "Sameena",
+    role: "Gossips",
+    productUrl: "https://gossips.shop/",
+    imageSrc: "/images/fellows/sameena.webp",
+    linkedinUrl: "https://www.linkedin.com/in/sameena-tanjum/",
+  },
 ];
 
 /** Featured first, then Season 2, then remaining Season 1. */
@@ -283,6 +291,8 @@ const FEATURED_IDS = [
   "chaitanya",
   "anuj",
   "bhuvanesh",
+  "prerna",
+  "sameena",
 ];
 
 const allFellows = [...fellows, ...season4Additions];
