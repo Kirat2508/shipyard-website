@@ -7,6 +7,8 @@ import {
   applicationStepSchemas,
   COMMITMENT_LABELS,
   COMMITMENT_VALUES,
+  GOAL_LABELS,
+  GOAL_VALUES,
   STAGE_LABELS,
   STAGE_VALUES,
   stripForStorage,
@@ -28,9 +30,12 @@ function applyZodIssuesToForm<T extends Record<string, unknown>>(
   issues: { path: (string | number)[]; message: string }[],
   setError: (name: FieldPath<T>, err: { message: string }) => void,
 ) {
+  // Keep the first message per field: later ones (e.g. a generic "Invalid input") are less helpful.
+  const seen = new Set<string>();
   for (const issue of issues) {
     const key = issue.path[0];
-    if (typeof key === "string") {
+    if (typeof key === "string" && !seen.has(key)) {
+      seen.add(key);
       setError(key as FieldPath<T>, { message: issue.message });
     }
   }
@@ -51,6 +56,10 @@ export function ApplyApp() {
       recentBuildLink: "",
       wantToBuild: "",
       unfinishedStory: "",
+      personalProject: "",
+      personalProjectLink: "",
+      goal: "",
+      goalOther: "",
       commitment: "",
       soloOrTeam: "",
       teammateName: "",
@@ -62,6 +71,7 @@ export function ApplyApp() {
 
   const { register, watch, setError, clearErrors, handleSubmit, getValues } = form;
   const soloOrTeam = watch("soloOrTeam");
+  const goal = watch("goal");
 
   async function goNext() {
     clearErrors();
@@ -273,11 +283,59 @@ export function ApplyApp() {
                   <span className="apply__err">{form.formState.errors.unfinishedStory.message}</span>
                 )}
               </label>
+              <label className="apply__field apply__field--block">
+                <span className="apply__question">
+                  What have you worked on in the last 6 months? Tell us about a personal project.
+                </span>
+                <span className="apply__hint body-md">Something you built yourself: what it does and who it is for.</span>
+                <textarea className="apply__textarea" rows={4} {...register("personalProject")} />
+                {form.formState.errors.personalProject && (
+                  <span className="apply__err">{form.formState.errors.personalProject.message}</span>
+                )}
+              </label>
+              <label className="apply__field">
+                <span className="apply__question">Live link to that project</span>
+                <span className="apply__hint body-md">A Vercel link, your own domain, anything people can open.</span>
+                <input
+                  type="text"
+                  inputMode="url"
+                  autoComplete="url"
+                  placeholder="https://yourproject.vercel.app"
+                  className="apply__input"
+                  {...register("personalProjectLink")}
+                />
+                {form.formState.errors.personalProjectLink && (
+                  <span className="apply__err">{form.formState.errors.personalProjectLink.message}</span>
+                )}
+              </label>
             </div>
           )}
 
           {step === 2 && (
             <div className="apply__fields">
+              <fieldset className="apply__fieldset">
+                <legend className="apply__question">What is your goal for joining Project Shipyard?</legend>
+                <div className="apply__pills">
+                  {GOAL_VALUES.map((val) => (
+                    <label key={val} className="apply__pill">
+                      <input type="radio" value={val} {...register("goal")} />
+                      <span>{GOAL_LABELS[val]}</span>
+                    </label>
+                  ))}
+                </div>
+                {form.formState.errors.goal && (
+                  <span className="apply__err">{form.formState.errors.goal.message}</span>
+                )}
+              </fieldset>
+              {goal === "other" && (
+                <label className="apply__field reveal-in">
+                  <span className="apply__question">Tell us your goal</span>
+                  <input type="text" className="apply__input" {...register("goalOther")} />
+                  {form.formState.errors.goalOther && (
+                    <span className="apply__err">{form.formState.errors.goalOther.message}</span>
+                  )}
+                </label>
+              )}
               <fieldset className="apply__fieldset">
                 <legend className="apply__question">
                   Are you willing to commit to all 3 Sundays and ship by the end?

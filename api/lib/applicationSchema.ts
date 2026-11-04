@@ -26,6 +26,22 @@ export const COMMITMENT_LABELS: Record<(typeof COMMITMENT_VALUES)[number], strin
   exploring: "Just exploring",
 };
 
+export const GOAL_VALUES = [
+  "revenue",
+  "first_users",
+  "startup",
+  "explore",
+  "other",
+] as const;
+
+export const GOAL_LABELS: Record<(typeof GOAL_VALUES)[number], string> = {
+  revenue: "Generating revenue",
+  first_users: "Getting my first users",
+  startup: "Building a startup",
+  explore: "Exploring my interests",
+  other: "Something else",
+};
+
 const linkedInRefine = (s: string) =>
   /linkedin\.com/i.test(s.trim()) || /^https?:\/\//i.test(s.trim());
 
@@ -53,10 +69,35 @@ const commitmentField = z
     (COMMITMENT_VALUES as readonly string[]).includes(s),
   );
 
+const goalField = z
+  .string()
+  .min(1, "Choose one option")
+  .refine((s): s is (typeof GOAL_VALUES)[number] => (GOAL_VALUES as readonly string[]).includes(s));
+
+/** A live link: with or without https://, e.g. myapp.vercel.app. */
+const liveLinkField = z
+  .string()
+  .trim()
+  .min(1, "Share a live link")
+  .max(2000)
+  .refine((s) => /^(https?:\/\/)?[^\s/.]+(\.[^\s/.]+)+(\/\S*)?$/i.test(s), {
+    message: "Add a live link, e.g. https://yourproject.vercel.app",
+  });
+
 const soloTeamField = z
   .string()
   .min(1, "Choose one option")
   .refine((s): s is "solo" | "team" => s === "solo" || s === "team");
+
+function goalRefinement(data: { goal: string; goalOther?: string | undefined }, ctx: z.RefinementCtx) {
+  if (data.goal === "other" && !data.goalOther?.trim()) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ["goalOther"],
+      message: "Tell us your goal",
+    });
+  }
+}
 
 function teamRefinement(data: {
   soloOrTeam: string;
@@ -106,15 +147,22 @@ export const applicationStepSchemas = [
       .min(80, "Write at least 2–3 lines so we understand what you want to build")
       .max(4000),
     unfinishedStory: z.string().min(20, "Tell us a bit more").max(4000),
+    personalProject: z.string().trim().min(20, "Tell us a bit about it").max(4000),
+    personalProjectLink: liveLinkField,
   }),
   z
     .object({
+      goal: goalField,
+      goalOther: z.string().max(500).optional(),
       commitment: commitmentField,
       soloOrTeam: soloTeamField,
       teammateName: z.string().max(200).optional(),
       teammateLinkedIn: z.string().max(500).optional(),
     })
-    .superRefine(teamRefinement),
+    .superRefine((data, ctx) => {
+      goalRefinement(data, ctx);
+      teamRefinement(data, ctx);
+    }),
   z.object({
     quitReason: z.string().min(10, "Please share a short answer").max(4000),
     botcheck: z.string().max(0).optional(),
@@ -137,6 +185,10 @@ export const applicationSchema = z
       .min(80, "Write at least 2–3 lines so we understand what you want to build")
       .max(4000),
     unfinishedStory: z.string().min(20, "Tell us a bit more").max(4000),
+    personalProject: z.string().trim().min(20, "Tell us a bit about it").max(4000),
+    personalProjectLink: liveLinkField,
+    goal: goalField,
+    goalOther: z.string().max(500).optional(),
     commitment: commitmentField,
     soloOrTeam: soloTeamField,
     teammateName: z.string().max(200).optional(),
@@ -144,7 +196,10 @@ export const applicationSchema = z
     quitReason: z.string().min(10, "Please share a short answer").max(4000),
     botcheck: z.string().max(0).optional(),
   })
-  .superRefine(teamRefinement);
+  .superRefine((data, ctx) => {
+    goalRefinement(data, ctx);
+    teamRefinement(data, ctx);
+  });
 
 export type ApplicationInput = z.infer<typeof applicationSchema>;
 

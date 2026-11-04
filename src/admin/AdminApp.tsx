@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { COMMITMENT_LABELS, STAGE_LABELS } from "../../api/lib/applicationSchema";
+import { COMMITMENT_LABELS, GOAL_LABELS, STAGE_LABELS } from "../../api/lib/applicationSchema";
 
 type Row = {
   id: string;
@@ -16,6 +16,10 @@ const PAYLOAD_KEYS = [
   "recentBuildLink",
   "wantToBuild",
   "unfinishedStory",
+  "personalProject",
+  "personalProjectLink",
+  "goal",
+  "goalOther",
   "commitment",
   "soloOrTeam",
   "teammateName",
@@ -192,9 +196,11 @@ export function AdminApp() {
               <th>LinkedIn</th>
               <th>WhatsApp</th>
               <th>Stage</th>
+              <th>Goal</th>
               <th>Commitment</th>
               <th>Solo / team</th>
               <th>Recent build</th>
+              <th>Personal project</th>
             </tr>
           </thead>
           <tbody>
@@ -226,6 +232,13 @@ export function AdminApp() {
                     : r.payload?.stage}
                 </td>
                 <td>
+                  {r.payload?.goal === "other"
+                    ? r.payload.goalOther || GOAL_LABELS.other
+                    : r.payload?.goal && r.payload.goal in GOAL_LABELS
+                      ? GOAL_LABELS[r.payload.goal as keyof typeof GOAL_LABELS]
+                      : "—"}
+                </td>
+                <td>
                   {r.payload?.commitment && r.payload.commitment in COMMITMENT_LABELS
                     ? COMMITMENT_LABELS[r.payload.commitment as keyof typeof COMMITMENT_LABELS]
                     : r.payload?.commitment}
@@ -234,6 +247,19 @@ export function AdminApp() {
                 <td>
                   {r.payload?.recentBuildLink ? (
                     <a href={r.payload.recentBuildLink} target="_blank" rel="noreferrer">
+                      Link
+                    </a>
+                  ) : (
+                    "—"
+                  )}
+                </td>
+                <td>
+                  {r.payload?.personalProjectLink ? (
+                    <a
+                      href={/^https?:\/\//i.test(r.payload.personalProjectLink) ? r.payload.personalProjectLink : `https://${r.payload.personalProjectLink}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Link
                     </a>
                   ) : (
