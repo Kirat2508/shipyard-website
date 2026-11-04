@@ -20,8 +20,8 @@ export type IntroOptions = {
 };
 
 /**
- * Preloader (a builder walks ideate → build → gtm → ship) → RocketLaunch from "ship"
- * → PhotoCollage → WordmarkDrop → Hero.
+ * Preloader (a ship sails ideate → build → gtm → ship) → the ship becomes a rocket and zooms
+ * into the camera → PhotoCollage → "Project Shipyard by AI Learn Circle" → Hero.
  * Runs on a fixed white stage over the already-rendered page. "skip intro" and Esc end it at once.
  */
 export function runIntro(opts: IntroOptions): void {
@@ -78,7 +78,7 @@ export function runIntro(opts: IntroOptions): void {
 
   (async () => {
     const pre = await Preloader(scene, { progress: assets.progress, signal });
-    await RocketLaunch(pre.stage, { builder: pre.builder, signal });
+    await RocketLaunch(pre.stage, { vessel: pre.vessel, signal });
     const frames = opts.frames.filter((f) => assets.loaded.has(f.src));
     const collage = await PhotoCollage(scene, { frames, signal });
 
@@ -86,8 +86,8 @@ export function runIntro(opts: IntroOptions): void {
     collage.animate([{ opacity: 1 }, { opacity: 0.16 }], { duration: tokenMs("dur-base", 480), fill: "forwards" });
     const mark = el("div", "sy-intro__mark");
     scene.appendChild(mark);
-    await WordmarkDrop(mark, {});
-    await wait(500, signal);
+    await WordmarkDrop(mark, { layout: "inline", byline: "by AI Learn Circle" });
+    await wait(900, signal);
 
     // Hand off: the stage fades away over the hero while its copy staggers in.
     opts.onHeroOpen?.();

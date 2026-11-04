@@ -3,6 +3,10 @@ import { clear, el, finished, prefersReducedMotion, tokenMs, easing } from "./mo
 export type WordmarkDropOptions = {
   text?: string;
   kicker?: string;
+  /** "inline" sets "Project Shipyard" on one line like the hero title; "stacked" (default) puts it above. */
+  layout?: "inline" | "stacked";
+  /** Optional line under the wordmark, e.g. "by AI Learn Circle". */
+  byline?: string;
 };
 
 export type Wordmark = {
@@ -16,18 +20,27 @@ export function renderWordmark(root: HTMLElement, opts: WordmarkDropOptions = {}
   const text = opts.text ?? "Shipyard";
   const kickerText = opts.kicker ?? "Project";
   clear(root);
-  const stage = el("div", "sy-drop");
+  const inline = opts.layout === "inline";
+  const stage = el("div", `sy-drop${inline ? " sy-drop--inline" : ""}`);
   stage.setAttribute("role", "img");
-  stage.setAttribute("aria-label", `${kickerText} ${text}`);
-  const kicker = el("div", "sy-drop__kicker", kickerText);
-  const word = el("div", "sy-drop__word");
+  stage.setAttribute("aria-label", [kickerText, text, opts.byline].filter(Boolean).join(" "));
+  const kicker = el(inline ? "span" : "div", "sy-drop__kicker", kickerText);
+  const word = el(inline ? "span" : "div", "sy-drop__word");
   const floor = el("div", "sy-drop__floor");
   const chars = Array.from(text).map((c) => {
     const s = el("span", "sy-drop__ch", c);
     word.appendChild(s);
     return s;
   });
-  stage.append(kicker, word, floor);
+  if (inline) {
+    const line = el("div", "sy-drop__line");
+    line.append(kicker, word);
+    stage.appendChild(line);
+  } else {
+    stage.append(kicker, word, floor);
+  }
+  const byline = opts.byline ? el("div", "sy-drop__by", opts.byline) : null;
+  if (byline) stage.appendChild(byline);
   root.appendChild(stage);
 
   const play = async () => {
@@ -42,12 +55,25 @@ export function renderWordmark(root: HTMLElement, opts: WordmarkDropOptions = {}
     // Tracking settles from wide to whatever the stylesheet sets for this wordmark.
     const tracking = parseFloat(getComputedStyle(kicker).letterSpacing) || 0;
     const size = parseFloat(getComputedStyle(kicker).fontSize) || 16;
+    // Inline: "Project" just fades up beside the word, so the line never reflows.
     kicker.animate(
-      [
-        { opacity: 0, letterSpacing: `${tracking + size * 0.7}px` },
-        { opacity: 1, letterSpacing: `${tracking}px` },
-      ],
+      inline
+        ? [
+            { opacity: 0, transform: "translateY(0.2em)" },
+            { opacity: 1, transform: "translateY(0)" },
+          ]
+        : [
+            { opacity: 0, letterSpacing: `${tracking + size * 0.7}px` },
+            { opacity: 1, letterSpacing: `${tracking}px` },
+          ],
       { duration: slow, delay: 200, easing: easing("ease-land", "ease-out"), fill: "both" },
+    );
+    byline?.animate(
+      [
+        { opacity: 0, transform: "translateY(10px)" },
+        { opacity: 1, transform: "translateY(0)" },
+      ],
+      { duration: slow, delay: 220 + chars.length * 70 + slow * 0.8, easing: easing("ease-land", "ease-out"), fill: "both" },
     );
     let last: Animation | undefined;
     chars.forEach((c, i) => {
