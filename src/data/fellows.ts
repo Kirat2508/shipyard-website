@@ -49,7 +49,7 @@ const prerna: Fellow = {
   id: "prerna",
   name: "Prerna",
   role: "nomira.in",
-  productUrl: "https://travel-app-beta-mauve.vercel.app/",
+  productUrl: "https://www.nomira.in/",
   imageSrc: "/images/fellows/prerna.png",
   linkedinUrl: "https://www.linkedin.com/in/prernaaagarwal/",
   bio: "Women-first travel app for safety tips, buddies, planning, and real insights.",
