@@ -5,7 +5,6 @@ import { HeroGalleryStrip } from "./components/HeroGalleryStrip";
 import { MentorsSection } from "./components/MentorsSection";
 import { initEditorialScroll } from "./editorialScroll";
 import { initHeroGallery } from "./heroGallery";
-import { initHeroVisualScroll } from "./heroVisualScroll";
 import { initSectionReveal } from "./sectionReveal";
 import { initSprintScrollspy } from "./sprintScrollspy";
 import { initWordmarkOnView } from "./intro/WordmarkDrop";
@@ -71,7 +70,6 @@ if (galleryRoot) {
   initHeroGallery();
 }
 
-initHeroVisualScroll();
 initEditorialScroll();
 initSprintScrollspy();
 

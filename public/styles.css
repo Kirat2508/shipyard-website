@@ -1045,11 +1045,6 @@ a.btn-on-dark {
   }
 }
 
-/* Builder photo + gallery follow the hero on white. */
-.sy-builder {
-  padding: var(--space-12) var(--gutter) 0;
-}
-
 /* ── Intro: runs on white ────────────────────────────────────────── */
 /* Cover set by the head script before first paint; lifts on its own if JS never arrives. */
 html.intro-pending::after {
@@ -1462,55 +1457,11 @@ html.intro-active body {
   color: var(--ember-text);
 }
 
-/* ── Builder photo (S3 hero image) ───────────────────────────────── */
-.hero-primary-image {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.hero-primary-image__inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.hero-primary-image__frame {
-  width: 100%;
-  max-width: min(640px, 100%);
-  margin: 0 auto;
-  transform-origin: center center;
-  will-change: transform, opacity;
-}
-
-@media (min-width: 960px) {
-  .hero-primary-image__frame {
-    max-width: min(700px, 48vw);
-  }
-}
-
-.hero-primary-image__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-primary-image__frame {
-    transform: none !important;
-    opacity: 1 !important;
-  }
-}
-
 /* ── Gallery strip: infinite marquee (duplicate strip + CSS animation) ── */
 .hero-gallery {
   width: 100%;
   margin: 0;
-  padding: var(--space-6) 0 var(--space-16);
+  padding: var(--space-12) 0 var(--space-16);
   background-color: var(--bg);
   overflow: hidden;
   will-change: opacity, transform;
