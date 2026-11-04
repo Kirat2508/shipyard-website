@@ -987,19 +987,30 @@ a.btn-on-dark {
   color: rgba(17, 17, 17, 0.75);
 }
 
-.sy-hero__label a {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(17, 17, 17, 0.35);
-  transition: border-color var(--dur-quick);
+.sy-hero__label {
+  align-items: center;
 }
 
-.sy-hero__label a:hover {
-  border-bottom-color: rgba(17, 17, 17, 0.75);
+.sy-hero__alc {
+  display: inline-flex;
+  transition: opacity var(--dur-quick);
+}
+
+.sy-hero__alc:hover {
+  opacity: 0.75;
+}
+
+.sy-hero__alc .sy-alc {
+  height: 44px;
+}
+
+.sy-alc {
+  display: block;
+  width: auto;
 }
 
 .sy-hero__presents {
-  font-size: 10px;
+  font-size: 13px;
   font-style: italic;
   text-transform: lowercase;
   opacity: 0.7;
@@ -1342,8 +1353,17 @@ html.intro-active body {
 }
 
 .sy-drop__by {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   font: italic 400 clamp(18px, 2vw, 24px)/1.3 var(--font-serif);
   color: var(--ink-muted);
+}
+
+.sy-drop__by-logo {
+  display: block;
+  width: auto;
+  height: clamp(36px, 4vw, 52px);
 }
 
 .sy-drop.is-waiting .sy-drop__ch,
@@ -1408,10 +1428,24 @@ html.intro-active body {
   white-space: nowrap;
 }
 
+.sy-kin__word.is-italic {
+  font-style: italic;
+}
+
+.sy-kin--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: clamp(56px, 5.4vw, 92px);
+  line-height: 0.95;
+}
+
+/* Clip only vertically, so letters slide in from below without breaking the word's natural spacing. */
 .sy-kin__mask {
   display: inline-block;
   overflow: hidden;
-  padding: 0 0.02em 0.14em;
+  overflow-x: visible;
+  overflow-y: clip;
+  padding: 0 0 0.14em;
   margin-bottom: -0.14em;
 }
 
@@ -1840,46 +1874,91 @@ html.intro-active body {
   color: var(--ink);
 }
 
-/* ── Fellows: sticker cards ──────────────────────────────────────── */
+/* ── Fellows: heading on the left, numbered polaroids on the right ── */
 .sy-fellows {
   overflow-x: clip;
 }
 
+.sy-fellows__layout {
+  display: grid;
+  gap: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .sy-fellows__layout {
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 2fr);
+    gap: var(--space-16);
+    align-items: start;
+  }
+
+  .sy-fellows__intro {
+    position: sticky;
+    top: var(--space-24);
+  }
+}
+
+.sy-fellows__intro {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-6);
+}
+
+/* Laurel, left-aligned to match the heading. */
+.sy-fellows__intro::before {
+  content: "";
+  width: 120px;
+  height: 60px;
+  background: var(--ink);
+  opacity: 0.35;
+  -webkit-mask: url("/images/s4/ornaments/laurel.svg") left center / contain no-repeat;
+  mask: url("/images/s4/ornaments/laurel.svg") left center / contain no-repeat;
+}
+
+.sy-fellows__lede {
+  margin: 0;
+  max-width: 24rem;
+  font: 400 clamp(18px, 1.6vw, 22px)/1.5 var(--font-sans);
+  color: var(--ink);
+}
+
 .sy-fellows__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-8) var(--space-6);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-8) var(--space-4);
 }
 
 @media (min-width: 640px) {
   .sy-fellows__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-12) var(--space-6);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .sy-fellows__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
+/* A polaroid: white card, hard shadow, slight tilt that straightens on hover. */
 .sy-fellow {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  padding: var(--space-3);
-  background: var(--bg);
-  border: 2px solid var(--ink);
-  box-shadow: var(--shadow-sticker);
-  color: var(--ink);
-  transform: rotate(var(--tilt, -4deg));
+  padding: var(--space-3) var(--space-3) var(--space-6);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  box-shadow: 5px 5px 0 #1f1a14;
+  color: #111111;
+  transform: rotate(var(--tilt, -2deg));
   transition: transform var(--dur-base) var(--ease-land);
 }
 
-/* Narrow phones: half the tilt so rotated corners stay inside the 16px gutter. */
 @media (max-width: 639px) {
   .sy-fellow {
-    transform: rotate(calc(var(--tilt, -4deg) / 2));
+    padding: var(--space-2) var(--space-2) var(--space-4);
+    box-shadow: 3px 3px 0 #1f1a14;
+    transform: rotate(calc(var(--tilt, -2deg) / 2));
   }
 }
 
@@ -1892,7 +1971,6 @@ html.intro-active body {
   position: relative;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border: 1.5px solid var(--ink);
   background: var(--bg-raised);
 }
 
@@ -1911,35 +1989,55 @@ html.intro-active body {
 
 .sy-fellow__linkedin {
   position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
+  top: var(--space-2);
+  right: var(--space-2);
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   border-radius: var(--radius-chip);
-  background: var(--ink);
-  color: var(--bg);
-  transition: transform var(--dur-quick) var(--ease-land);
+  background: rgba(17, 17, 17, 0.85);
+  color: #ffffff;
+  opacity: 0;
+  transition:
+    opacity var(--dur-quick),
+    transform var(--dur-quick) var(--ease-land);
 }
 
-.sy-fellow__linkedin:hover {
-  transform: translate(-2px, -2px);
+.sy-fellow:hover .sy-fellow__linkedin,
+.sy-fellow__linkedin:focus-visible {
+  opacity: 1;
+}
+
+/* Touch screens have no hover: keep the link visible. */
+@media (hover: none) {
+  .sy-fellow__linkedin {
+    opacity: 1;
+  }
 }
 
 .sy-fellow__linkedin-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 .sy-fellow__caption {
   display: grid;
-  gap: var(--space-1);
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: 0 var(--space-1);
+}
+
+.sy-fellow__num {
+  font: 600 13px/1 var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  color: var(--ember);
 }
 
 .sy-fellow__name {
   margin: 0;
-  font: 400 24px/1.1 var(--font-serif);
+  font: 400 clamp(17px, 1.7vw, 23px)/1.15 var(--font-serif);
 }
 
 .sy-fellow__meta {
@@ -1947,23 +2045,19 @@ html.intro-active body {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-1);
-  font: 500 13px/1.4 var(--font-sans);
-  color: var(--ink-muted);
+  margin-top: 2px;
+  font: 400 13px/1.4 var(--font-sans);
+  color: #5e5e66;
 }
 
 .sy-fellow__product {
   display: inline-flex;
-  color: var(--ember-text);
+  color: #b23a0a;
 }
 
 .sy-fellow__product-icon {
   width: 1em;
   height: 1em;
-}
-
-.sy-fellow__bio {
-  margin: var(--space-1) 0 0;
-  font: 400 14px/1.5 var(--font-sans);
 }
 
 /* ── Supported by: partner logos and mentors on raised cards ─────── */
@@ -1999,10 +2093,17 @@ html.intro-active body {
   max-width: 100%;
   max-height: calc(var(--logo-height) * 0.85);
   object-fit: contain;
+  /* Several partner files ship with a solid white background; multiply makes it disappear on the card. */
+  mix-blend-mode: multiply;
 }
 
 .logo-slot--vc .logo-img {
   max-height: var(--logo-height);
+}
+
+/* Stacked marks (icon over wordmark) need more height to read at the same weight. */
+.logo-slot--mark .logo-img {
+  max-height: calc(var(--logo-height) * 2);
 }
 
 .supported-by-mentors {
@@ -2248,10 +2349,18 @@ html.intro-active body {
   color: rgba(17, 17, 17, 0.7);
 }
 
+.sy-foot__credit {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 .sy-foot__credit a {
-  color: inherit;
-  border-bottom: 1px solid rgba(17, 17, 17, 0.35);
-  text-decoration: none;
+  display: inline-flex;
+}
+
+.sy-foot__credit .sy-alc {
+  height: 40px;
 }
 
 /* Portrait screens: keep the laptop statue in view, bottom right. */

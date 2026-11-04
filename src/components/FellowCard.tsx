@@ -34,12 +34,13 @@ function ProductLinkIcon({ className }: { className?: string }) {
   );
 }
 
-export function FellowCard({ fellow, tilt }: { fellow: Fellow; tilt: number }) {
+export function FellowCard({ fellow, index, tilt }: { fellow: Fellow; index: number; tilt: number }) {
   const nameId = `fellow-name-${fellow.id}`;
   const label = `LinkedIn profile for ${fellow.name}`;
-  const bioTrimmed = fellow.bio?.trim();
+  const role = fellow.role.trim();
   const productUrl = fellow.productUrl?.trim();
-  const productLinkLabel = `Visit ${fellow.role} website (opens in new tab)`;
+  const productLinkLabel = `Visit ${role} website (opens in new tab)`;
+  const alt = role ? `Portrait of ${fellow.name}, ${role}` : `Portrait of ${fellow.name}`;
 
   return (
     <article
@@ -50,7 +51,7 @@ export function FellowCard({ fellow, tilt }: { fellow: Fellow; tilt: number }) {
       <div className="sy-fellow__photo">
         <OptimizedImage
           originalSrc={fellow.imageSrc}
-          alt={`Portrait of ${fellow.name}, ${fellow.role}`}
+          alt={alt}
           className="sy-fellow__img"
           wrapperClassName="sy-fellow__img-wrap"
           sizes={IMAGE_SIZES.fellow}
@@ -73,24 +74,30 @@ export function FellowCard({ fellow, tilt }: { fellow: Fellow; tilt: number }) {
       </div>
 
       <div className="sy-fellow__caption">
-        <h3 id={nameId} className="sy-fellow__name">
-          {fellow.name}
-        </h3>
-        <div className="sy-fellow__meta">
-          <span>{fellow.role}</span>
-          {productUrl ? (
-            <a
-              href={productUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={productLinkLabel}
-              className="sy-fellow__product"
-            >
-              <ProductLinkIcon className="sy-fellow__product-icon" />
-            </a>
+        <span className="sy-fellow__num" aria-hidden="true">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <div>
+          <h3 id={nameId} className="sy-fellow__name">
+            {fellow.name}
+          </h3>
+          {role ? (
+            <div className="sy-fellow__meta">
+              <span>{role}</span>
+              {productUrl ? (
+                <a
+                  href={productUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={productLinkLabel}
+                  className="sy-fellow__product"
+                >
+                  <ProductLinkIcon className="sy-fellow__product-icon" />
+                </a>
+              ) : null}
+            </div>
           ) : null}
         </div>
-        {bioTrimmed ? <p className="sy-fellow__bio">{bioTrimmed}</p> : null}
       </div>
     </article>
   );

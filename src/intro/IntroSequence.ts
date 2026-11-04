@@ -6,6 +6,7 @@ import { ROCKET_SRC, RocketLaunch } from "./RocketLaunch";
 import { WordmarkDrop } from "./WordmarkDrop";
 
 export const INTRO_SEEN_KEY = "sy-intro-seen";
+export const ALC_LOGO_SRC = "/images/s4/brand/ai-learn-circle.webp";
 /** If the page took longer than this to boot, the CSS cover has already lifted: skip the intro. */
 const LATE_BOOT_MS = 5000;
 
@@ -74,7 +75,10 @@ export function runIntro(opts: IntroOptions): void {
   document.addEventListener("keydown", onKey);
   skip.addEventListener("click", finish);
 
-  const assets = trackAssets([opts.heroImageSrc, ROCKET_SRC, ...opts.frames.map((f) => f.src)], [document.fonts.ready]);
+  const assets = trackAssets(
+    [opts.heroImageSrc, ROCKET_SRC, ALC_LOGO_SRC, ...opts.frames.map((f) => f.src)],
+    [document.fonts.ready],
+  );
 
   (async () => {
     const pre = await Preloader(scene, { progress: assets.progress, signal });
@@ -86,7 +90,7 @@ export function runIntro(opts: IntroOptions): void {
     collage.animate([{ opacity: 1 }, { opacity: 0.16 }], { duration: tokenMs("dur-base", 480), fill: "forwards" });
     const mark = el("div", "sy-intro__mark");
     scene.appendChild(mark);
-    await WordmarkDrop(mark, { layout: "inline", byline: "by AI Learn Circle" });
+    await WordmarkDrop(mark, { layout: "inline", byline: "by", bylineLogo: { src: ALC_LOGO_SRC, alt: "AI Learn Circle" } });
     await wait(900, signal);
 
     // Hand off: the stage fades away over the hero while its copy staggers in.

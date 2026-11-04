@@ -2,12 +2,14 @@ import { easing, prefersReducedMotion, tokenMs } from "../intro/motion";
 
 /**
  * KineticHeadline: letters slide in from alternating sides with a skew, masked per letter,
- * once when the heading scrolls into view. Markup: <h2 class="sy-kin" data-sy-kinetic data-accent="6">.
+ * once when the heading scrolls into view. Markup: <h2 class="sy-kin" data-sy-kinetic data-accent="6">;
+ * data-italic="1" sets that word (0-based) in italic.
  * The heading keeps its text as its accessible name; the split letters are aria-hidden.
  */
 function split(heading: HTMLElement): HTMLElement[] {
   const text = heading.textContent?.trim() ?? "";
   const accent = Number(heading.dataset.accent ?? -1);
+  const italic = Number(heading.dataset.italic ?? -1);
   heading.setAttribute("aria-label", text);
   heading.textContent = "";
 
@@ -16,7 +18,7 @@ function split(heading: HTMLElement): HTMLElement[] {
   text.split(" ").forEach((word, w) => {
     if (w > 0) index += 1; // the space between words
     const wordEl = document.createElement("span");
-    wordEl.className = "sy-kin__word";
+    wordEl.className = `sy-kin__word${w === italic ? " is-italic" : ""}`;
     wordEl.setAttribute("aria-hidden", "true");
     for (const c of Array.from(word)) {
       const mask = document.createElement("span");

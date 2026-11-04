@@ -5,8 +5,10 @@ export type WordmarkDropOptions = {
   kicker?: string;
   /** "inline" sets "Project Shipyard" on one line like the hero title; "stacked" (default) puts it above. */
   layout?: "inline" | "stacked";
-  /** Optional line under the wordmark, e.g. "by AI Learn Circle". */
+  /** Optional line under the wordmark, e.g. "by". */
   byline?: string;
+  /** Logo shown after the byline text; its alt joins the accessible name. */
+  bylineLogo?: { src: string; alt: string };
 };
 
 export type Wordmark = {
@@ -23,7 +25,7 @@ export function renderWordmark(root: HTMLElement, opts: WordmarkDropOptions = {}
   const inline = opts.layout === "inline";
   const stage = el("div", `sy-drop${inline ? " sy-drop--inline" : ""}`);
   stage.setAttribute("role", "img");
-  stage.setAttribute("aria-label", [kickerText, text, opts.byline].filter(Boolean).join(" "));
+  stage.setAttribute("aria-label", [kickerText, text, opts.byline, opts.bylineLogo?.alt].filter(Boolean).join(" "));
   const kicker = el(inline ? "span" : "div", "sy-drop__kicker", kickerText);
   const word = el(inline ? "span" : "div", "sy-drop__word");
   const floor = el("div", "sy-drop__floor");
@@ -39,8 +41,17 @@ export function renderWordmark(root: HTMLElement, opts: WordmarkDropOptions = {}
   } else {
     stage.append(kicker, word, floor);
   }
-  const byline = opts.byline ? el("div", "sy-drop__by", opts.byline) : null;
-  if (byline) stage.appendChild(byline);
+  const byline = opts.byline || opts.bylineLogo ? el("div", "sy-drop__by") : null;
+  if (byline) {
+    if (opts.byline) byline.appendChild(el("span", undefined, opts.byline));
+    if (opts.bylineLogo) {
+      const logo = el("img", "sy-drop__by-logo");
+      logo.src = opts.bylineLogo.src;
+      logo.alt = "";
+      byline.appendChild(logo);
+    }
+    stage.appendChild(byline);
+  }
   root.appendChild(stage);
 
   const play = async () => {
