@@ -337,32 +337,43 @@
           <div id="mentors-root"></div>
         </div>
       </section>
-
-      <section class="sy-final sy-dark reveal-on-scroll" aria-labelledby="final-cta-heading">
-        <div class="sy-mask" data-sy-mask>
-          <div class="sy-mask__shape" aria-hidden="true"></div>
-          <p class="sy-mask__word" aria-hidden="true">Shipyard</p>
-          <p class="sy-mask__word sy-mask__word--ink" aria-hidden="true">Shipyard</p>
-          <div class="sy-final__cta">
-            <h2 class="sy-final__title" id="final-cta-heading">Your next idea deserves to be shipped.</h2>
-            <a class="sy-pill" href="/apply"
-              ><span class="sy-pill__swap"><span>apply now</span><span aria-hidden="true">let&apos;s ship it</span></span
-              ><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" /></svg></a
-            >
-          </div>
-        </div>
-        <p class="sy-final__note">Limited spaces available for the current intake.</p>
-      </section>
     </main>
 
-    <footer class="sy-footer">
-      <div class="sy-footer__mark" data-sy-wordmark>
+    <footer class="sy-foot" aria-labelledby="final-cta-heading">
+      <div class="sy-foot__bg" aria-hidden="true">
+        <img
+          src="/images/s4/hero-garden-1280.webp"
+          srcset="
+            /images/s4/hero-garden-768.webp   768w,
+            /images/s4/hero-garden-1280.webp 1280w,
+            /images/s4/hero-garden-1672.webp 1672w
+          "
+          sizes="100vw"
+          alt=""
+          width="1672"
+          height="941"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="sy-foot__cta">
+        <h2 class="sy-foot__title" id="final-cta-heading">Your next idea deserves to be shipped.</h2>
+        <a class="sy-pill" href="/apply"
+          ><span class="sy-pill__swap"><span>apply now</span><span aria-hidden="true">let&apos;s ship it</span></span
+          ><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" /></svg></a
+        >
+        <p class="sy-foot__note">Limited spaces available for the current intake.</p>
+      </div>
+      <div class="sy-foot__mark" data-sy-wordmark>
         <div class="sy-drop" role="img" aria-label="Project Shipyard">
           <div class="sy-drop__kicker">Project</div>
           <div class="sy-drop__word">Shipyard</div>
-          <div class="sy-drop__floor"></div>
         </div>
       </div>
+      <p class="sy-foot__credit">
+        Presented by
+        <a href="https://www.linkedin.com/company/ai-learn-circle/" target="_blank" rel="noopener noreferrer">AI Learn Circle</a>
+      </p>
     </footer>
 
     <script type="module" src="/src/main.tsx"></script>

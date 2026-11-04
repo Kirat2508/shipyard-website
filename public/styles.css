@@ -1086,30 +1086,24 @@ html.intro-active body {
   --pill-fg: var(--ink);
 }
 
-/* Preloader: one small lowercase word at a time, centred */
+/* Preloader: progress bar with four checkpoints and a walking pixel builder */
 .sy-pre {
   display: grid;
   place-items: center;
   align-content: center;
-  gap: var(--space-4);
+  gap: var(--space-12);
 }
 
-.sy-pre__word {
+.sy-pre__bar {
   position: relative;
-  height: 1.3em;
-  overflow: hidden;
-  font: italic 400 clamp(26px, 3vw, 34px)/1.3 var(--font-serif);
-  text-align: center;
-}
-
-.sy-pre__word span {
-  display: block;
+  width: min(640px, 78vw);
+  height: 2px;
+  margin-top: 56px;
 }
 
 .sy-pre__track {
-  position: relative;
-  width: 140px;
-  height: 1px;
+  position: absolute;
+  inset: 0;
   background: var(--line);
 }
 
@@ -1120,6 +1114,55 @@ html.intro-active body {
   background: var(--ember);
 }
 
+.sy-pre__node {
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+.sy-pre__dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--ink-muted);
+  border-radius: 50%;
+  background: var(--bg);
+  translate: -50% -50%;
+  transition:
+    background var(--dur-quick),
+    border-color var(--dur-quick),
+    scale var(--dur-quick) var(--ease-land);
+}
+
+.sy-pre__label {
+  position: absolute;
+  left: 0;
+  top: 18px;
+  transform: translateX(-50%);
+  transform-origin: 50% 0;
+  white-space: nowrap;
+  font: italic 400 clamp(15px, 2vw, 19px)/1.2 var(--font-serif);
+  color: var(--ink-muted);
+  transition: color var(--dur-quick);
+}
+
+.sy-pre__node.is-on .sy-pre__dot {
+  background: var(--ember);
+  border-color: var(--ember);
+  scale: 1.3;
+}
+
+.sy-pre__node.is-on .sy-pre__label {
+  color: var(--ink);
+}
+
+/* The last checkpoint ("ship"); the builder is the bar's last child. */
+.sy-pre.is-done .sy-pre__node:nth-last-child(2) .sy-pre__label {
+  color: var(--ember-text);
+}
+
 .sy-pre__counter {
   font: 500 11px/1 var(--font-sans);
   letter-spacing: 0.08em;
@@ -1127,17 +1170,37 @@ html.intro-active body {
   color: var(--ink-muted);
 }
 
-/* Rocket: a small ship lifting off from the word "ship" */
-.sy-rocket {
-  display: grid;
-  place-items: center;
-  align-content: center;
+/* The builder walks on top of the line. */
+.sy-walker {
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 30px;
+  transform: translate(-50%, 0);
+  image-rendering: pixelated;
 }
 
+.sy-walker svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sy-walker__legs-b,
+.sy-walker.is-step .sy-walker__legs-a {
+  display: none;
+}
+
+.sy-walker.is-step .sy-walker__legs-b {
+  display: inline;
+}
+
+/* Rocket: lands where the builder stands on "ship", then lifts off */
 .sy-rocket__ship {
-  position: relative;
-  width: 30px;
-  margin-bottom: var(--space-2);
+  position: absolute;
+  width: 34px;
+  transform: translate(-50%, -100%);
+  z-index: 3;
 }
 
 .sy-rocket__ship img {
@@ -1938,73 +2001,197 @@ html.intro-active body {
   color: var(--ink-muted);
 }
 
-/* ── Final CTA (black section): MaskReveal behind the call to action ── */
-.sy-final {
-  padding: var(--space-16) var(--gutter);
+/* ── Roman ornaments: line art masked in the section's ink colour ── */
+.sy-section-head::before {
+  content: "";
+  width: 120px;
+  height: 60px;
+  margin-bottom: var(--space-1);
+  background: var(--ink);
+  opacity: 0.35;
+  -webkit-mask: url("/images/s4/ornaments/laurel.svg") center / contain no-repeat;
+  mask: url("/images/s4/ornaments/laurel.svg") center / contain no-repeat;
 }
 
-.sy-mask {
+/* Greek-key bands along the top and bottom edges of the black sprint section. */
+.sprint-system {
   position: relative;
-  overflow: hidden;
-  min-height: clamp(380px, 62vh, 560px);
-  max-width: 1440px;
-  margin: 0 auto;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-card);
 }
 
-.sy-mask__shape {
-  position: absolute;
-  inset: 0;
-  background: var(--ember);
-  clip-path: polygon(70% 0, 100% 0, 100% 40%, 90% 100%, 60% 100%, 80% 40%);
-}
-
-.sy-mask__word {
+.sprint-system::before,
+.sprint-system::after,
+.logos::before {
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 4%;
-  margin: 0;
-  text-align: center;
-  font: italic 400 min(20vw, 280px)/0.9 var(--font-serif);
-  letter-spacing: -0.03em;
-  color: var(--bg-sunk);
-  white-space: nowrap;
+  height: 16px;
+  background: var(--ink);
+  opacity: 0.22;
+  -webkit-mask: url("/images/s4/ornaments/meander.svg") left center / auto 16px repeat-x;
+  mask: url("/images/s4/ornaments/meander.svg") left center / auto 16px repeat-x;
 }
 
-.sy-mask__word--ink {
-  color: #000000;
-  clip-path: polygon(70% 0, 100% 0, 100% 40%, 90% 100%, 60% 100%, 80% 40%);
+.sprint-system::before {
+  top: var(--space-6);
 }
 
-.sy-final__cta {
+.sprint-system::after {
+  bottom: var(--space-6);
+}
+
+.logos {
   position: relative;
-  z-index: 2;
+}
+
+.logos::before {
+  top: 0;
+  opacity: 0.14;
+}
+
+/* Fluted columns frame the story column on wide screens. */
+@media (min-width: 1100px) {
+  .editorial-intro {
+    position: relative;
+  }
+
+  .editorial-intro::before,
+  .editorial-intro::after {
+    content: "";
+    position: absolute;
+    top: var(--space-16);
+    bottom: var(--space-16);
+    width: 80px;
+    background: var(--ink);
+    opacity: 0.1;
+    -webkit-mask: url("/images/s4/ornaments/column.svg") center / 100% 100% no-repeat;
+    mask: url("/images/s4/ornaments/column.svg") center / 100% 100% no-repeat;
+  }
+
+  .editorial-intro::before {
+    left: max(var(--gutter), calc(50% - 32rem));
+  }
+
+  .editorial-intro::after {
+    right: max(var(--gutter), calc(50% - 32rem));
+  }
+}
+
+/* ── Footer: call to action and the wordmark over the garden ─────── */
+.sy-foot {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: grid;
-  justify-items: start;
-  gap: var(--space-6);
-  max-width: 30rem;
-  padding: var(--space-8);
+  justify-items: center;
+  align-content: start;
+  gap: var(--space-8);
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: var(--space-24) var(--gutter) var(--space-8);
+  text-align: center;
+  color: #111111;
 }
 
-.sy-final__title {
+.sy-foot__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #f6ecdf;
+}
+
+.sy-foot__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 70%;
+}
+
+/* Warm cream wash over the sky so the wordmark reads, fading in from the white page above. */
+.sy-foot__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0) 22%),
+    radial-gradient(ellipse 60% 46% at 50% 52%, rgba(253, 245, 233, 0.78), rgba(253, 245, 233, 0) 75%);
+}
+
+.sy-foot__cta {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  max-width: 34rem;
+}
+
+.sy-foot__title {
   margin: 0;
-  font: 400 clamp(32px, 4vw, 56px)/1.05 var(--font-serif);
-  color: var(--ink);
+  font: 400 clamp(30px, 4vw, 52px)/1.08 var(--font-serif);
+  letter-spacing: -0.01em;
 }
 
-.sy-final__note {
-  max-width: 1440px;
-  margin: var(--space-4) auto 0;
+.sy-foot__note {
+  margin: 0;
   font: 400 14px/1.4 var(--font-sans);
-  color: var(--ink-muted);
+  color: rgba(17, 17, 17, 0.7);
 }
 
-/* ── Footer sign-off: WordmarkDrop on white ──────────────────────── */
-.sy-footer {
-  padding: var(--space-24) var(--gutter) var(--space-12);
+.sy-foot__mark {
+  align-self: center;
+  width: 100%;
+}
+
+/* Wordmark styled like the S IV footer art: "Project" upright, "Shipyard" in bronze italic. */
+.sy-foot .sy-drop {
+  justify-items: start;
+  width: fit-content;
+  margin: 0 auto;
+  gap: 0;
+  color: #2a1d12;
+}
+
+.sy-foot .sy-drop__kicker {
+  padding-left: 0.08em;
+  font: 400 clamp(32px, 5vw, 76px)/1 var(--font-serif);
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+.sy-foot .sy-drop__word {
+  font: italic 400 clamp(72px, 14vw, 216px)/0.95 var(--font-serif);
+  letter-spacing: -0.03em;
+}
+
+.sy-foot .sy-drop__ch {
+  padding-right: 0.02em;
+  background: linear-gradient(165deg, #5e2c0c 0%, #a3561c 38%, #d8913f 56%, #9a4e18 74%, #6a330f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sy-foot .sy-drop__floor {
+  display: none;
+}
+
+.sy-foot__credit {
+  margin: 0;
+  font: 400 13px/1.4 var(--font-sans);
+  color: rgba(17, 17, 17, 0.7);
+}
+
+.sy-foot__credit a {
+  color: inherit;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.35);
+  text-decoration: none;
+}
+
+/* Portrait screens: keep the laptop statue in view, bottom right. */
+@media (max-aspect-ratio: 1/1) {
+  .sy-foot__bg img {
+    object-position: 84% 100%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

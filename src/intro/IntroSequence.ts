@@ -20,7 +20,8 @@ export type IntroOptions = {
 };
 
 /**
- * Preloader (ideate → build → gtm → ship) → RocketLaunch → PhotoCollage → WordmarkDrop → Hero.
+ * Preloader (a builder walks ideate → build → gtm → ship) → RocketLaunch from "ship"
+ * → PhotoCollage → WordmarkDrop → Hero.
  * Runs on a fixed white stage over the already-rendered page. "skip intro" and Esc end it at once.
  */
 export function runIntro(opts: IntroOptions): void {
@@ -76,8 +77,8 @@ export function runIntro(opts: IntroOptions): void {
   const assets = trackAssets([opts.heroImageSrc, ROCKET_SRC, ...opts.frames.map((f) => f.src)], [document.fonts.ready]);
 
   (async () => {
-    await Preloader(scene, { progress: assets.progress, signal });
-    await RocketLaunch(scene, { signal });
+    const pre = await Preloader(scene, { progress: assets.progress, signal });
+    await RocketLaunch(pre.stage, { builder: pre.builder, signal });
     const frames = opts.frames.filter((f) => assets.loaded.has(f.src));
     const collage = await PhotoCollage(scene, { frames, signal });
 

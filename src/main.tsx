@@ -11,7 +11,6 @@ import { initSprintScrollspy } from "./sprintScrollspy";
 import { initWordmarkOnView } from "./intro/WordmarkDrop";
 import { initHeroParallax, playHeroEntrance } from "./s4/hero";
 import { initKineticHeadlines } from "./s4/kineticHeadline";
-import { initMaskReveal } from "./s4/maskReveal";
 import "./index.css";
 
 const HERO_IMAGE_FALLBACK = "/images/s4/hero-garden-1280.webp";
@@ -36,7 +35,6 @@ if (document.documentElement.classList.contains("intro-pending")) {
 
 initHeroParallax();
 initKineticHeadlines();
-initMaskReveal();
 
 const footerMark = document.querySelector<HTMLElement>("[data-sy-wordmark]");
 if (footerMark) initWordmarkOnView(footerMark);

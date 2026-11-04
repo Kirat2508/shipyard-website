@@ -39,10 +39,13 @@ export function renderWordmark(root: HTMLElement, opts: WordmarkDropOptions = {}
       easing: easing("ease-snap", "ease"),
       fill: "both",
     });
+    // Tracking settles from wide to whatever the stylesheet sets for this wordmark.
+    const tracking = parseFloat(getComputedStyle(kicker).letterSpacing) || 0;
+    const size = parseFloat(getComputedStyle(kicker).fontSize) || 16;
     kicker.animate(
       [
-        { opacity: 0, letterSpacing: "1.2em" },
-        { opacity: 1, letterSpacing: ".5em" },
+        { opacity: 0, letterSpacing: `${tracking + size * 0.7}px` },
+        { opacity: 1, letterSpacing: `${tracking}px` },
       ],
       { duration: slow, delay: 200, easing: easing("ease-land", "ease-out"), fill: "both" },
     );
