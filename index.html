@@ -25,13 +25,10 @@
       fetchpriority="high"
     />
     <script>
-      /* S IV intro gate: once per session, never with reduced motion. Sets a stage cover before first paint. */
+      /* S IV intro gate: plays on every visit, never with reduced motion. Sets a stage cover before first paint. */
       (function () {
         try {
-          if (
-            !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
-            !sessionStorage.getItem("sy-intro-seen")
-          ) {
+          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
             document.documentElement.classList.add("intro-pending");
           }
         } catch (e) {}

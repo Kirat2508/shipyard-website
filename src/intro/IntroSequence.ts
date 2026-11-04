@@ -5,7 +5,6 @@ import { Preloader } from "./Preloader";
 import { ROCKET_SRC, RocketLaunch } from "./RocketLaunch";
 import { WordmarkDrop } from "./WordmarkDrop";
 
-export const INTRO_SEEN_KEY = "sy-intro-seen";
 export const ALC_LOGO_SRC = "/images/s4/brand/ai-learn-circle.webp";
 /** If the page took longer than this to boot, the CSS cover has already lifted: skip the intro. */
 const LATE_BOOT_MS = 5000;
@@ -28,11 +27,6 @@ export type IntroOptions = {
 export function runIntro(opts: IntroOptions): void {
   const root = document.documentElement;
   root.classList.remove("intro-pending");
-  try {
-    sessionStorage.setItem(INTRO_SEEN_KEY, "1");
-  } catch {
-    /* storage blocked: the intro may replay, which is harmless */
-  }
   if (performance.now() > LATE_BOOT_MS) return;
 
   const main = document.querySelector("main");

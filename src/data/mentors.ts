@@ -22,7 +22,7 @@ const featuredSpeakers: Mentor[] = [
   {
     id: "varun",
     name: "Varun Kashyap",
-    role: "",
+    role: "GTM India Lead, Aspire",
     imageSrc: "/images/mentors/varun-kashyap.webp",
   },
 ];
