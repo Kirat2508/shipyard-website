@@ -1,5 +1,5 @@
-import { useState } from "react";
-import type { FieldPath } from "react-hook-form";
+import { useEffect, useState } from "react";
+import type { DefaultValues, FieldPath, UseFormSetError } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
 import {
@@ -7,6 +7,7 @@ import {
   applicationStepSchemas,
   COMMITMENT_LABELS,
   COMMITMENT_VALUES,
+  FIELD_STEP,
   GOAL_LABELS,
   GOAL_VALUES,
   STAGE_LABELS,
@@ -26,19 +27,74 @@ const STEPS = [
   { prelude: "The line", title: "One last honest question", sub: "Helps us understand fit." },
 ];
 
-function applyZodIssuesToForm<T extends Record<string, unknown>>(
-  issues: { path: (string | number)[]; message: string }[],
-  setError: (name: FieldPath<T>, err: { message: string }) => void,
-) {
-  // Keep the first message per field: later ones (e.g. a generic "Invalid input") are less helpful.
-  const seen = new Set<string>();
+/** Every answer starts as an empty string; choice fields only take their typed values once picked. */
+const EMPTY_VALUES: Record<keyof ApplicationInput, string> = {
+  fullName: "",
+  linkedIn: "",
+  whatsapp: "",
+  stage: "",
+  recentBuildLink: "",
+  wantToBuild: "",
+  unfinishedStory: "",
+  personalProject: "",
+  personalProjectLink: "",
+  goal: "",
+  goalOther: "",
+  commitment: "",
+  soloOrTeam: "",
+  teammateName: "",
+  teammateLinkedIn: "",
+  quitReason: "",
+  botcheck: "",
+};
+
+/** Answers are kept in this browser only, so a reload or a closed tab doesn't lose them. */
+const DRAFT_KEY = "shipyard-apply-draft";
+
+function loadDraft(): Partial<Record<keyof ApplicationInput, string>> {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    const data = raw ? (JSON.parse(raw) as unknown) : null;
+    if (!data || typeof data !== "object") return {};
+    const out: Partial<Record<keyof ApplicationInput, string>> = {};
+    for (const key of Object.keys(EMPTY_VALUES) as (keyof ApplicationInput)[]) {
+      const v = (data as Record<string, unknown>)[key];
+      if (typeof v === "string" && key !== "botcheck") out[key] = v;
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}
+
+function clearDraft(): void {
+  try {
+    localStorage.removeItem(DRAFT_KEY);
+  } catch {
+    /* storage unavailable */
+  }
+}
+
+/** First message per field: later ones (e.g. a generic "Invalid input") are less helpful. */
+function firstErrorPerField(issues: { path: PropertyKey[]; message: string }[]): Record<string, string> {
+  const out: Record<string, string> = {};
   for (const issue of issues) {
     const key = issue.path[0];
-    if (typeof key === "string" && !seen.has(key)) {
-      seen.add(key);
-      setError(key as FieldPath<T>, { message: issue.message });
-    }
+    if (typeof key === "string" && !(key in out)) out[key] = issue.message;
   }
+  return out;
+}
+
+function applyFieldErrors(errors: Record<string, string>, setError: UseFormSetError<ApplicationInput>) {
+  for (const [key, message] of Object.entries(errors)) {
+    setError(key as FieldPath<ApplicationInput>, { message });
+  }
+}
+
+/** Earliest step holding one of these fields, so the applicant lands where the problem is. */
+function firstStepWith(fields: string[]): number | null {
+  const steps = fields.map((f) => FIELD_STEP[f]).filter((s): s is number => typeof s === "number");
+  return steps.length ? Math.min(...steps) : null;
 }
 
 export function ApplyApp() {
@@ -48,30 +104,32 @@ export function ApplyApp() {
   const [saving, setSaving] = useState(false);
 
   const form = useForm<ApplicationInput>({
-    defaultValues: {
-      fullName: "",
-      linkedIn: "",
-      whatsapp: "",
-      stage: "",
-      recentBuildLink: "",
-      wantToBuild: "",
-      unfinishedStory: "",
-      personalProject: "",
-      personalProjectLink: "",
-      goal: "",
-      goalOther: "",
-      commitment: "",
-      soloOrTeam: "",
-      teammateName: "",
-      teammateLinkedIn: "",
-      quitReason: "",
-      botcheck: "",
-    },
+    defaultValues: { ...EMPTY_VALUES, ...loadDraft() } as DefaultValues<ApplicationInput>,
   });
 
   const { register, watch, setError, clearErrors, handleSubmit, getValues } = form;
   const soloOrTeam = watch("soloOrTeam");
   const goal = watch("goal");
+
+  useEffect(() => {
+    const sub = watch((values) => {
+      try {
+        const { botcheck: _b, ...answers } = values;
+        localStorage.setItem(DRAFT_KEY, JSON.stringify(answers));
+      } catch {
+        /* storage unavailable: the form still works, it just won't survive a reload */
+      }
+    });
+    return () => sub.unsubscribe();
+  }, [watch]);
+
+  /** Shows field errors (possibly on another step) and moves to the first affected step. */
+  function showErrors(errors: Record<string, string>, banner: string | null) {
+    applyFieldErrors(errors, setError);
+    const target = firstStepWith(Object.keys(errors));
+    if (target !== null && target !== step) setStep(target);
+    setSubmitError(banner);
+  }
 
   async function goNext() {
     clearErrors();
@@ -80,7 +138,7 @@ export function ApplyApp() {
     const schema = applicationStepSchemas[step];
     const parsed = schema.safeParse(values);
     if (!parsed.success) {
-      applyZodIssuesToForm(parsed.error.issues, setError);
+      applyFieldErrors(firstErrorPerField(parsed.error.issues), setError);
       return;
     }
     setStep((s) => Math.min(s + 1, STEPS.length - 1));
@@ -97,7 +155,7 @@ export function ApplyApp() {
     setSubmitError(null);
     const full = applicationSchema.safeParse(data);
     if (!full.success) {
-      applyZodIssuesToForm(full.error.issues, setError);
+      showErrors(firstErrorPerField(full.error.issues), "Some answers need another look. We've taken you to the first one.");
       return;
     }
     setSaving(true);
@@ -112,16 +170,21 @@ export function ApplyApp() {
         error?: string;
         detail?: string;
         hint?: string;
+        issues?: Record<string, string[] | undefined>;
       };
       if (!res.ok) {
         const parts = [body.error, body.detail, body.hint].filter(
           (s): s is string => typeof s === "string" && s.length > 0,
         );
-        setSubmitError(
-          parts.length > 0 ? parts.join(" ") : `Could not submit (${res.status}). Try again later.`,
-        );
+        const banner = parts.length > 0 ? parts.join(" ") : `Could not submit (${res.status}). Try again later.`;
+        const fieldErrors: Record<string, string> = {};
+        for (const [key, messages] of Object.entries(body.issues ?? {})) {
+          if (messages?.[0]) fieldErrors[key] = messages[0];
+        }
+        showErrors(fieldErrors, banner);
         return;
       }
+      clearDraft();
       setSubmitted(true);
     } catch {
       setSubmitError("Network error. Check your connection and try again.");

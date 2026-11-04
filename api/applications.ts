@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-import { applicationSchema, stripForStorage } from "./lib/applicationSchema.js";
+import { applicationSchema, FIELD_LABELS, stripForStorage } from "./lib/applicationSchema.js";
 import { getSupabaseServerClient, supabaseFetchHint } from "./lib/supabaseServer.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -38,9 +38,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const parsed = applicationSchema.safeParse(body);
     if (!parsed.success) {
+      const issues = parsed.error.flatten().fieldErrors as Record<string, string[] | undefined>;
+      const fields = Object.keys(issues);
+      const sent = (body && typeof body === "object" ? body : {}) as Record<string, unknown>;
+      // Answers absent entirely mean the page predates a form update (it never asked for them).
+      const missing = fields.filter((f) => sent[f] === undefined);
+      const names = fields.map((f) => FIELD_LABELS[f] ?? f);
       res.status(400).json({
-        error: "Invalid form data",
-        issues: parsed.error.flatten().fieldErrors,
+        error: "Some answers need another look.",
+        detail: `Please check: ${names.join(", ")}.`,
+        hint: missing.length
+          ? "The application form was updated after you opened this page. Reload the page to see the new questions, then submit again."
+          : undefined,
+        issues,
       });
       return;
     }

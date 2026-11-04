@@ -768,5 +768,15 @@
       480,
       600
     ]
+  },
+  "/images/fellows/sameena.webp": {
+    "src": "/images/fellows/sameena-240.webp",
+    "srcSet": "/images/fellows/sameena-240.webp 240w, /images/fellows/sameena-480.webp 480w, /images/fellows/sameena-800.webp 800w",
+    "placeholder": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAAAwBQCdASoUABQAPu1orlCppaQiqAqpMB2JbACdMtKgAAN5t4lVLvVgBdiOgUXR3Js3AAD+i9PEihe6nJzKlrROaykkc3n6UJvt9B0B9nt1ejdHMTniNmMFy1Ev161Zq99lIRUDj9+jz72j22iazF1tGK8LESrKBDeDKvACpCPGqVh0rN3WGCsm4qWVHLaoDyo+4koz5nhhiwx/iMyuhB9dJCpDbrjcC6KXbv2ktu6xPD6rkKBf37Hq34EsdhOyRGvNAS8wmKuEAAAA",
+    "widths": [
+      240,
+      480,
+      800
+    ]
   }
 }
