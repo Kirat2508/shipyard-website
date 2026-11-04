@@ -46,6 +46,7 @@ export function ApplyApp() {
     defaultValues: {
       fullName: "",
       linkedIn: "",
+      whatsapp: "",
       stage: "",
       recentBuildLink: "",
       wantToBuild: "",
@@ -202,6 +203,23 @@ export function ApplyApp() {
                 />
                 {form.formState.errors.linkedIn && (
                   <span className="apply__err">{form.formState.errors.linkedIn.message}</span>
+                )}
+              </label>
+              <label className="apply__field">
+                <span className="apply__question">WhatsApp number</span>
+                <span className="apply__hint body-md">Include your country code.</span>
+                <input
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  placeholder="+91 98765 43210"
+                  className="apply__input"
+                  required
+                  aria-required="true"
+                  {...register("whatsapp")}
+                />
+                {form.formState.errors.whatsapp && (
+                  <span className="apply__err">{form.formState.errors.whatsapp.message}</span>
                 )}
               </label>
               <fieldset className="apply__fieldset">

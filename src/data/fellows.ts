@@ -245,7 +245,8 @@ const season4Additions: Fellow[] = [
   {
     id: "vineet",
     name: "Vineet Mehta",
-    role: "",
+    role: "Mizual",
+    productUrl: "https://mizual.ai/",
     imageSrc: "/images/fellows/vineet.webp",
     linkedinUrl: "https://www.linkedin.com/in/vinm007/",
   },

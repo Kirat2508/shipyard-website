@@ -742,7 +742,7 @@
   "/images/mentors/pulkit-jain.png": {
     "src": "/images/mentors/pulkit-jain-240.webp",
     "srcSet": "/images/mentors/pulkit-jain-240.webp 240w, /images/mentors/pulkit-jain-480.webp 480w, /images/mentors/pulkit-jain-600.webp 600w",
-    "placeholder": "data:image/webp;base64,UklGRtQAAABXRUJQVlA4IMgAAABQBQCdASoUABUAPu1ur1IppiQiqAgBMB2JZACdMtplvgtwVuBZ2O977c0nQREj/45IYhgA/h1H8ovFK6Urh4+PjRbSaHsPc8fHM4YiAcSQfs/EVB0zP8aZ6c80s6V0dZQl8ZNeZhVrCUC6l4CPxNl5QmSf670BVHf/eBedNKU7AZL+LsaA6Ip5MslawCVef3aI0Di25QfXN3nPvgMcbmPSU9Frz0OFG7CjiwXx7Nh7O+YL3l6BmarizEgGMb2obDQBFjlC/+q4AA==",
+    "placeholder": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAABwBQCdASoUABUAPu1wsFIppiSiqAgBMB2JZACdMoAltQqlrnvn3JsEzjFIcvLribnupe8IAP4dQ6jc1EckfIY1YuB1g0EJsCW0nj/OXkXlDhkPP0cZNCAqivaPt/922qcnzbaQUcB+GfTTes4B3hVCdHW5b9vqGb2fzJT96CusLatf16rocomk81vsWs/zE3eOFVsgOPATzjpdow8Cp7JAMK4sVQi3YODpFHRA5HnVGHs75QW3ULL9xx8MeZ9Lds/jQa7QbM7P1+AA",
     "widths": [
       240,
       480,
@@ -753,6 +753,16 @@
     "src": "/images/mentors/manikantha-240.webp",
     "srcSet": "/images/mentors/manikantha-240.webp 240w, /images/mentors/manikantha-480.webp 480w, /images/mentors/manikantha-600.webp 600w",
     "placeholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAADQBACdASoUABQAPu1qqVAppaOiqA1RMB2JZQDI88AA+Y5f8mSRAfMt0JvJe1C6AAD9c8fVElHsIPuiPntFAeSgm2XhepUi8/jMtqWj0WsazBczMO0PF3d6d+v5A6a9wm72rFPaLAAgTZY9ZS6KNmOW0vSQ6YXAmKNX+3N/eFYEvFqMHOkzW6jT3vvHXGQUlgc4UOdV6ADLwEs/YDqXnEENYAAAAA==",
+    "widths": [
+      240,
+      480,
+      600
+    ]
+  },
+  "/images/mentors/varun-kashyap.webp": {
+    "src": "/images/mentors/varun-kashyap-240.webp",
+    "srcSet": "/images/mentors/varun-kashyap-240.webp 240w, /images/mentors/varun-kashyap-480.webp 480w, /images/mentors/varun-kashyap-600.webp 600w",
+    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQBACdASoUABQAPu1qq1EppaOiqAqpMB2JbACo9BBWHuGUWWyUPZcXpPEUwbkaAAD+vhpOhIdmxFJRfIPwxbciBi6mHmT+5wd3XPrjfXDFJ+P4ySofpYwgxF/Fjc1lWOHk3zAAJcCo/VPb13NpMEyRltqlLJt63qa5fTiPoJtQ6ChLvilIz/mBz+EMhNUN/PUwN0xRHAA=",
     "widths": [
       240,
       480,

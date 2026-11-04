@@ -16,8 +16,14 @@ const featuredSpeakers: Mentor[] = [
   {
     id: "manikantha",
     name: "Manikantha",
-    role: "",
+    role: "Head of Product, Sarvam",
     imageSrc: "/images/mentors/manikantha.png",
+  },
+  {
+    id: "varun",
+    name: "Varun Kashyap",
+    role: "",
+    imageSrc: "/images/mentors/varun-kashyap.webp",
   },
 ];
 
