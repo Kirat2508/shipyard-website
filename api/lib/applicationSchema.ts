@@ -203,6 +203,46 @@ export const applicationSchema = z
 
 export type ApplicationInput = z.infer<typeof applicationSchema>;
 
+/** Plain-language names for each answer, used in error messages. */
+export const FIELD_LABELS: Record<string, string> = {
+  fullName: "Full name",
+  linkedIn: "LinkedIn profile",
+  whatsapp: "WhatsApp number",
+  stage: "Current stage",
+  recentBuildLink: "What you built recently",
+  wantToBuild: "What you want to build",
+  unfinishedStory: "Something you never finished",
+  personalProject: "Personal project from the last 6 months",
+  personalProjectLink: "Live link to that project",
+  goal: "Goal for joining",
+  goalOther: "Your goal",
+  commitment: "Commitment to all 3 Sundays",
+  soloOrTeam: "Solo or team",
+  teammateName: "Teammate name",
+  teammateLinkedIn: "Teammate LinkedIn",
+  quitReason: "What would make you quit",
+};
+
+/** Which form step (0-based) each answer lives on. */
+export const FIELD_STEP: Record<string, number> = {
+  fullName: 0,
+  linkedIn: 0,
+  whatsapp: 0,
+  stage: 0,
+  recentBuildLink: 1,
+  wantToBuild: 1,
+  unfinishedStory: 1,
+  personalProject: 1,
+  personalProjectLink: 1,
+  goal: 2,
+  goalOther: 2,
+  commitment: 2,
+  soloOrTeam: 2,
+  teammateName: 2,
+  teammateLinkedIn: 2,
+  quitReason: 3,
+};
+
 export function stripForStorage(data: ApplicationInput): Omit<ApplicationInput, "botcheck"> {
   const { botcheck: _b, ...rest } = data;
   return rest;
