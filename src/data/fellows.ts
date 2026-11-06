@@ -261,8 +261,8 @@ const season4Additions: Fellow[] = [
   {
     id: "sameena",
     name: "Sameena",
-    role: "Gossips",
-    productUrl: "https://gossips.shop/",
+    role: "Ginnie",
+    productUrl: "https://ginnie.biz/",
     imageSrc: "/images/fellows/sameena.webp",
     linkedinUrl: "https://www.linkedin.com/in/sameena-tanjum/",
   },
